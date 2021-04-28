@@ -1,5 +1,6 @@
 body {
     background-color: #F5F5F7;
+    margin: 0px;
 }
 
 a {
@@ -10,7 +11,8 @@ a {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding: 5px;
     background: #1D1D17;
     color: #F5F5F7;
     font-family: Helvetica;
@@ -19,18 +21,20 @@ a {
 }
 
 .header_section {
+    justify-content: space-between;
     display: flex;
     align-items: center;
 }
 
 .header_item {
-    padding: 10px 15px;
+    padding: 7px 15px;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .header_item:hover {
-    background-color: #afaf20;
+    background-color: #676767;
     border-radius: 4px;
 }
 
@@ -40,4 +44,29 @@ a {
 
 .headerButton {
     cursor: pointer;
+}
+
+.registration_form {
+    background-color: #F5F5F7;
+    margin: 0px;
+}
+
+.header_logo {
+    display: flex;
+}
+
+#header_logo1 {
+    width: 0px;
+    height: 0px;
+    border-top: 70px solid transparent;
+    border-right: 140px solid #6bbf20;
+    border-bottom: 70px solid transparent;
+}
+
+#header_logo2 {
+    width: 0px;
+    height: 0px;
+    border-top: 70px solid transparent;
+    border-left: 140px solid #ff5a00;
+    border-bottom: 70px solid transparent;
 }
