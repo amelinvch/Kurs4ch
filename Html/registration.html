@@ -7,7 +7,36 @@
     <title>Регистрация</title>
 </head>
 
+
 <body>
+
+    <form action="">
+        <div class="container">
+            <center>
+                <h1 title="Пожалуйста, заполните эту форму, чтобы создать учетную запись.">Регистрация</h1>
+            </center>
+            <hr>
+
+            <!--<label for="email"><b>Введите ваш email:</b></label>-->
+            <input type="text" placeholder="Введите ваш Email" name="email" required>
+
+            <!--<label for="psw"><b>Введите ваш пароль:</b></label>-->
+            <input type="password" placeholder="Введите ваш пароль" name="psw" required>
+
+            <!--<label for="psw-repeat"><b>Повтор пароля:</b></label>-->
+            <input type="password" placeholder="Повтор пароля:" name="psw-repeat" required>
+            <hr>
+            <p>Создавая учетную запись, вы соглашаетесь с нашими <a href="https://www.youtube.com/watch?v=Y-RgUwcEbno"> Условиями и конфиденциальностью.</a></p>
+
+            <button type="submit" class="registerbtn">Регистрация</button>
+        </div>
+
+        <div class="container signin">
+            <p>Уже есть аккаунт? <a href="login.html">Войти</a>.</p>
+        </div>
+    </form>
+
+    <!--
     <form action="">
         <h1 title="Форма регистрации на сайте">Регистрация</h1>
         <div class="group">
@@ -26,10 +55,11 @@
             <a href="#">Забыл пароль?</a>
         </div>
         <div id="regDown">
-            <center><button id="regButton">СОЗДАТЬ АККАУНТ</button></center>
+            <center><button type="submit" id="regButton">СОЗДАТЬ АККАУНТ</button></center>
         </div>
     </form>
     </div>
+    -->
 </body>
 
 </html>
