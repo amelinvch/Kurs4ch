@@ -16,50 +16,77 @@
         <div class="header_section">
             <div class="header_item headerlogo"><a href="#">
                 BistroBox</a></div>
-            <div class="header_item headerButton"><a href="#">
+            <div class="header_item"><a href="#">
             Каталог</a></div>
-            <div class="header_item headerButton"><a href="#">
+            <div class="header_item"><a href="#">
             Поиск</a></div>
         </div>
         <div class="header_section">
-            <div class="header_item headerButton"><a href="#">
+            <div class="header_item"><a href="#">
             Лайк</a></div>
-            <div class="header_item headerButton"><a href="#">
+            <div class="header_item"><a href="#">
             Добавить обьявление</a></div>
-            <div class="header_item headerButton"><a href="#">
-            сообщения</a></div>
-            <div class="header_item headerButton"><a href="#">
+            <div class="header_item"><a href="#">
+            Сообщения</a></div>
+            <div class="header_item"><a href="Html/registration.html">
             Корзина</a></div>
-            <!--
-            <div class="header_item headerButton"><button>
+
+            <div class="header_item headerButton"><button data-modal>
                 Аккаунт</button></div>
-            -->
+            <!--
             <div class="header_item headerButton"><a href="Html/registration.html">
             Аккаунт</a></div>
+            -->
 
         </div>
     </div>
 
     <hr>
 
-    <div class="login-box">
-        <h1>Login</h1>
-        <div class="textbox">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
-        </div>
 
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
+    <!-- <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#">
+                    <div class="modal__close" data-close>&times;</div>
+                    <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
+                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
+                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
+                    <button class="btn btn_dark btn_min">Перезвонить мне</button>
+                </form>
+            </div>
         </div>
+    </div> -->
 
-        <input type="button" class="btnSin" value="Sign in">
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <div class="login-box">
+                    <form action="">
+                        <div data-close class="modalClose">&times;</div>
+                        <h1>Login</h1>
+                        <div class="textbox">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+
+                        <div class="textbox">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+
+                        <input type="button" class="btnSin" value="Sign in">
+
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <button class="btnTheme">Dark</button>
 
-    <button class="btn">Dark</button>
     <script src="Js/script.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
+
 </body>
 
 </html>

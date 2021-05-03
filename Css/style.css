@@ -3,7 +3,6 @@
     }
     
     * {
-        color: var(--textColorHead);
         font-family: helvetica;
         margin: 0px;
         box-sizing: border-box;
@@ -28,6 +27,7 @@
         --btnFontColor: var(--white);
         --textColorHead: var(--white);
         --textColorBody: var(--black);
+        --colorBgHead: var(--black);
     }
     
     .dark-theme {
@@ -36,13 +36,14 @@
         --btnFontColor: var(--blackL);
         --textColorHead: var(--white);
         --textColorBody: var(--while);
+        --colorBgHead: var(--black);
     }
     
-    .btn {
+    .btnTheme {
         background-color: var(--fontColor);
     }
     
-    .btn {
+    .btnTheme {
         position: absolute;
         top: 10%;
         left: 10px;
@@ -58,7 +59,7 @@
         background-color: var(--fontColor);
     }
     
-    .btn:focus {
+    .btnTheme:focus {
         outline-style: none;
     }
     
@@ -67,7 +68,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 5px;
-        background: var(--black);
+        background: var(--colorBgHead);
         width: 100%;
         height: 58px;
     }
@@ -75,6 +76,31 @@
     .header a {
         text-decoration: none;
         color: var(--textColorHead);
+    }
+    
+    .headerButton {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        border: 1px solid rgba(0, 0, 0, .2);
+        /* box-shadow: 0 4px 15px rgba(0, 0, 0, .2); */
+        cursor: pointer;
+        transition: .3s all;
+        outline: 0;
+    }
+    
+    .headerButton button {
+        background-color: var(--colorBgHead);
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
     }
     
     .header_section {
@@ -91,6 +117,7 @@
     }
     
     .header_item:hover {
+        transition: .3s all;
         background-color: #676767;
         border-radius: 4px;
     }
@@ -127,6 +154,7 @@
     input[type=text]:focus,
     input[type=password]:focus {
         background-color: #ddd;
+        border: 20px;
         outline: none;
     }
     
@@ -167,7 +195,7 @@
     .login-box {
         width: 280px;
         position: absolute;
-        top: 50%;
+        top: 8%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: var(--fontColor);
@@ -200,12 +228,19 @@
     .textbox input {
         border: none;
         outline: none;
-        background: none;
+        background: var(--bg);
         color: var(--textColorBody);
         font-size: 18px;
-        width: 80%;
+        width: 95%;
         float: left;
         margin: 0 10px;
+        opacity: .5;
+    }
+    
+    .textbox input:focus {
+        opacity: 1;
+        background-color: var(--bg);
+        color: var(--textColorBody);
     }
     
     .btnSin {
@@ -216,5 +251,114 @@
         padding: 5px;
         font-size: 18px;
         cursor: pointer;
-        margin: 12px 0;
+        margin: 30px 0;
+    }
+    
+    .btnSin:hover {
+        transition: .3s all;
+        background-color: var(--fontColor);
+        color: var(--bg);
+    }
+    /*
+
+    Модальное окно логина
+
+    */
+    
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    .modal__dialog {
+        max-width: 500px;
+        margin: 40px auto;
+    }
+    
+    .modal__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 400px;
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--textColorHead);
+        border-radius: 4px;
+        overflow-y: hidden;
+    }
+    
+    .modalClose {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        font-size: 30px;
+        color: var(--textColorBody);
+        opacity: .5;
+        font-weight: 700;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .modalClose:hover {
+        transition: .3s all;
+        color: var(--textColorBody);
+        opacity: 1;
+    }
+    
+    .modal__title {
+        text-align: center;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    
+    .modal__input {
+        display: block;
+        margin: 20px auto 20px auto;
+        width: 280px;
+        height: 50px;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+        border: none;
+        font-size: 18px;
+        text-align: center;
+        padding: 0 20px;
+        outline: 0;
+    }
+    
+    .modal .btn {
+        display: block;
+        width: 280px;
+        margin: 0 auto;
+    }
+    
+    .show {
+        display: block;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
     }
