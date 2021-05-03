@@ -11,15 +11,15 @@
     -->
 </head>
 
-<body>
+<body class="light-theme">
     <div class="header">
         <div class="header_section">
-            <div class="header_item headerlogo">
-                BistroBox
-            </div>
+            <div class="header_item headerlogo"><a href="#">
+                BistroBox</a></div>
             <div class="header_item headerButton"><a href="#">
             Каталог</a></div>
-
+            <div class="header_item headerButton"><a href="#">
+            Поиск</a></div>
         </div>
         <div class="header_section">
             <div class="header_item headerButton"><a href="#">
@@ -30,11 +30,36 @@
             сообщения</a></div>
             <div class="header_item headerButton"><a href="#">
             Корзина</a></div>
+            <!--
+            <div class="header_item headerButton"><button>
+                Аккаунт</button></div>
+            -->
             <div class="header_item headerButton"><a href="Html/registration.html">
             Аккаунт</a></div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="login-box">
+        <h1>Login</h1>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username">
         </div>
 
+        <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
 
+        <input type="button" class="btnSin" value="Sign in">
+    </div>
+
+    <button class="btn">Dark</button>
+    <script src="Js/script.js"></script>
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
 
 </html>
