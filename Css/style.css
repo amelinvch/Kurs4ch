@@ -79,28 +79,26 @@
     }
     
     .headerButton {
-        font-size: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-        border: 1px solid rgba(0, 0, 0, .2);
-        /* box-shadow: 0 4px 15px rgba(0, 0, 0, .2); */
-        cursor: pointer;
-        transition: .3s all;
-        outline: 0;
     }
     
     .headerButton button {
         background-color: var(--colorBgHead);
         border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
+        margin-left: 3px;
+        margin-right: 3px;
         cursor: pointer;
+    }
+    
+    #bgIcon {
+        fill: var(--bg);
+        stroke: var(--fontColor);
+        /* fill: #F5F5F7; */
+    }
+    
+    #dgIconAc {
+        fill: var(--fontColor);
     }
     
     .header_section {
