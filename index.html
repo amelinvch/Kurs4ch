@@ -5,29 +5,24 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Css/style.css">
     <title>BistroBox</title>
-    <!--
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    -->
+
 </head>
 
 <body class="light-theme">
     <div class="header">
         <div class="header_section">
-            <div class="header_item headerlogo"><a href="#">
+            <div class="header_item "><a href="#">
                 BistroBox</a></div>
             <div class="header_item"><a href="#">
             Каталог</a></div>
             <div class="headerButton">
                 <button>
-                    <span>
-                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id="bgIcon" d="M30.4 0H21.6C11.8798 0 4 7.87979 4 17.6V26.4C4 36.1202 11.8798 44 21.6 44H30.4C40.1202 44 48 36.1202 48 26.4V17.6C48 7.87979 40.1202 0 30.4 0Z" />
-                            <rect id="dgIconAc" x="26" y="23.3895" width="2.00218" height="10" transform="rotate(-43.945 26 23.3895)" />
-                            <circle id="bgIcon" cx="23.5" cy="19.5" r="5.5"  stroke-width="2"/>
-                            <circle id="bgIcon" cx="23.5" cy="19.5" r="4.5" />
-                        </svg>
-                     </span>
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
+                             <rect id="dgIconAc" x="23.5" y="22" width="2.00218" height="10" transform="rotate(-43.945 26 23.3895)" />
+                                <circle id="bgIcon" cx="20.5" cy="19.5" r="5.5"  stroke-width="2"/>
+                                <circle id="bgIcon" cx="20.5" cy="19.5" r="4.5" />
+                            </svg>
                 </button>
             </div>
 
@@ -35,20 +30,19 @@
         <div class="header_section">
             <div class="header_item"><a href="#">
             Лайк</a></div>
-            <div class="header_item"><a href="#">
-            Добавить обьявление</a></div>
+            <div class="header_item"><a href="Html/postAnAd.html">
+                Добавить обьявление</a>
+            </div>
             <div class="header_item"><a href="#">
             Сообщения</a></div>
             <div class="headerButton">
                 <button>
-                    <span>
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id='bgIcon' d="M26.4 0H17.6C7.87979 0 0 7.87979 0 17.6V26.4C0 36.1202 7.87979 44 17.6 44H26.4C36.1202 44 44 36.1202 44 26.4V17.6C44 7.87979 36.1202 0 26.4 0Z" />
-                            <path id='bgIcon' d="M13 13L15.08 13.36L16.043 24.833C16.12 25.77 16.903 26.489 17.843 26.486H28.752C29.649 26.488 30.41 25.828 30.537 24.94L31.486 18.382C31.592 17.649 31.083 16.969 30.351 16.863C30.287 16.854 15.414 16.849 15.414 16.849"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
+                           <path id='bgIcon' d="M13 13L15.08 13.36L16.043 24.833C16.12 25.77 16.903 26.489 17.843 26.486H28.752C29.649 26.488 30.41 25.828 30.537 24.94L31.486 18.382C31.592 17.649 31.083 16.969 30.351 16.863C30.287 16.854 15.414 16.849 15.414 16.849"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle id="dgIconAc" cx="19.5" cy="29.5" r="1.5" />
                             <circle id="dgIconAc" cx="27.5" cy="29.5" r="1.5" />
                         </svg>
-                    </span>
                 </button>
             </div>
 
@@ -63,30 +57,11 @@
                      </span>
                 </button>
             </div>
-            <!--
-            <div class="header_item headerButton"><a href="Html/registration.html">
-            Аккаунт</a></div>
-            -->
 
         </div>
     </div>
 
     <hr>
-
-
-    <!-- <div class="modal">
-        <div class="modal__dialog">
-            <div class="modal__content">
-                <form action="#">
-                    <div class="modal__close" data-close>&times;</div>
-                    <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
-                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
-                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
-                    <button class="btn btn_dark btn_min">Перезвонить мне</button>
-                </form>
-            </div>
-        </div>
-    </div> -->
 
     <div class="modal">
         <div class="modal__dialog">
