@@ -6,25 +6,20 @@ switcher.addEventListener('click', function() {
     document.body.classList.toggle('dark-theme');
 
     let className = document.body.className;
-    if (className == "light-theme") {
-        this.textContent = "Dark";
-    } else {
-        this.textContent = "Light";
-    }
-    //console.log('current class name: ' + className);
+    className == "light-theme" ? this.textContent = "Dark" : this.textContent = "Light";
 });
+
 
 //Modal
 
-const modalTrigger = document.querySelectorAll('[data-modal]'),
-    modal = document.querySelector('.modal'),
-    modalCloseBtn = document.querySelector('[data-close]');
+const modalTrigger = document.querySelectorAll('[data-modal]');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('[data-close]');
 
 modalTrigger.forEach(btn => {
     btn.addEventListener('click', function() {
         modal.classList.add('show');
         modal.classList.remove('hide');
-        // Либо вариант с toggle - но тогда назначить класс в верстке
         document.body.style.overflow = 'hidden';
     });
 });
@@ -32,7 +27,6 @@ modalTrigger.forEach(btn => {
 function closeModal() {
     modal.classList.add('hide');
     modal.classList.remove('show');
-    // Либо вариант с toggle - но тогда назначить класс в верстке
     document.body.style.overflow = '';
 }
 
@@ -49,16 +43,3 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
-// const modalTrigger = document.querySelectorAll('[data-modal]'),
-//     modal = document.querySelector('.modal'),
-//     modalCloseBtn = document.querySelector('[dara-close]');
-
-// modalTrigger.addEventListener('click', () => {
-//     modal.classList.add('show');
-//     modal.classList.remove('hide');
-// });
-
-// modalCloseBtn.addEventListener('click', () => {
-//     modal.classList.add('hide');
-//     modal.classList.remove('show');
-// });
