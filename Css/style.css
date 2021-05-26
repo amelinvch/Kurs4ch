@@ -43,6 +43,7 @@ body {
 
 .btnTheme {
     position: absolute;
+    cursor: pointer;
     top: 3px;
     left: 10px;
     height: 50px;
@@ -128,54 +129,6 @@ hr {
     background-color: #676767;
     border-radius: 4px;
 }
-
-
-/*
-Регистрация
-*/
-
-
-/*
-.login-box input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: var(--while_light);
-}
-
-.login-box input[type=text]:focus,
-input[type=password]:focus {
-    background-color: var(--while_light);
-    border: 20px;
-    outline: none;
-}
-
-.registerbtn {
-    background-color: #e7e772;
-    color: rgb(0, 0, 0);
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-
-.registerbtn:hover {
-    opacity: 1;
-}
-
-.signin {
-    height: 60px;
-    padding: 4px;
-    color: #F5F5F7;
-    background: #1D1D17;
-    border-radius: 0px 0px 25px 25px;
-    text-align: center;
-} */
 
 
 /*...............Модальное окно логина...............*/
@@ -369,7 +322,7 @@ input[type=password]:focus {
 }
 
 .work {
-    height: 300px;
+    height: 400px;
     width: 300px;
     overflow: hidden;
     box-shadow: 0 0 4px var(--black_ligth);
@@ -408,4 +361,328 @@ input[type=password]:focus {
 
 .work_price {
     color: var(--black_ligth);
+}
+
+.work_btn_like button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s all;
+    stroke: var(--black_ligth);
+    fill: var(--black_ligth);
+}
+
+.work_btn_like2 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s all;
+    stroke: var(--black_ligth);
+    fill: var(--red);
+}
+
+.work_btn_like {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 6px;
+    border-color: var(--black_ligth);
+}
+
+.work_counter_like {
+    padding: 10px;
+}
+
+/*...............Добавлние поста...................*/
+
+.post_add {
+    color: var(--black_ligth);
+}
+
+.content_block {
+    margin: 10px;
+    background: none;
+    color: var(--black_ligth);
+    border: 3px solid;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.input_post_add {
+    margin: 10px;
+    width: 52%;
+    background: var(--while_light);
+    border: 3px solid;
+    border-color: var(--black_ligth);
+    border-radius: 10px;
+    font-size: 13pt;
+    padding: 10px;
+    outline: 0;
+    outline-offset: 0;
+    color: var(--black_ligth);
+}
+
+#publish_post {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 45px 45px var(--black_ligth) inset, 0 0 0 0 var(--black_ligth);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--while_light);
+    transition: .15s ease-in-out;
+}
+
+#publish_post:hover {
+    box-shadow: 0 0 10px 0 var(--black_ligth) inset, 0 0 10px 4px var(--black_ligth);
+    color: var(--black_const);
+}
+
+.title_post_add {
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 600px;
+    margin: 48px 15px 30px;
+}
+
+.text_h3_post_add {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.text_h4_post_add {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+/*........Load photos........*/
+
+.add_photos {
+    border: 2px dashed var(--black_ligth);
+    height: 150px;
+    width: 170px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0 10px 20px;
+}
+
+.add_photos.active {
+    border: 2px solid var(--white_ligth);
+}
+
+#upload-photo-icon {
+    fill: var(--black_ligth);
+}
+
+.add_photos button {
+    padding: 10px 25px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: var(--white_ligth);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add_photos img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/*........Choosing category manue........*/
+
+.select-box {
+    position: relative;
+    display: flex;
+    width: 500px;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.select-box .options-container {
+    background: var(--black_ligth);
+    color: var(--while_light);
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected {
+    background: var(--black_ligth);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: var(--while_light);
+    position: relative;
+    order: 0;
+}
+
+.selected::after {
+    content: "";
+    background: url("/svg/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+    transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+    margin-top: 54px;
+}
+
+.select-box .options-container.active+.selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: var(--black_ligth);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: var(--while_light);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: var(--black_ligth);
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+
+/* Searchbox */
+
+.search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    position: absolute;
+    border-radius: 8px 8px 0 0;
+    z-index: 100;
+    border: 8px solid var(--black_ligth);
+    ;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.select-box .options-container.active~.search-box input {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/*........Advertisment page........*/
+
+.photo2 {
+    width: 1200px;
+    height: 500px;
+}
+
+.photo_advertisment {
+    height: 500px;
+    width: 1200px;
+    overflow: hidden;
+    box-shadow: 0 0 4px var(--black_ligth);
+    border-radius: 10px;
+}
+
+.catalog_example_ad2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#buy-button {
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 80px;
+    padding: 15px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 45px 45px var(--black_ligth) inset, 0 0 0 0 var(--black_ligth);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--while_light);
+    transition: .15s ease-in-out;
+}
+
+#buy-button:hover {
+    box-shadow: 0 0 10px 0 var(--black_ligth) inset, 0 0 10px 4px var(--black_ligth);
+    color: var(--black_const);
+}
+
+
+/*......Letters counter.......*/
+
+#my-textarea {
+    height: 150px;
+    width: 51%;
+    border-radius: 10px;
+    margin-left: 10px;
+    outline: 0;
+    background: var(--while_light);
+    border: 3px solid var(--black_ligth);
+}
+
+#my-textarea-remaining-chars {
+    color: var(--black_ligth);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#my-input-remaining-chars {
+    color: var(--black_ligth);
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 15px;
+    text-align: center;
 }
