@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Добавление поста</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body class="light-theme">
+    <header class="header">
+        <button class="btnTheme">Dark</button>
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_inner_rigth">
+                    <div class="header_item "><a href="../index.html">
+                    BistroBox</a></div>
+                    <div class="header_item"><a href="#">
+                    Каталог</a></div>
+                    <div class="headerButton">
+                        <button>
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
+                             <rect id="dgIconAc" x="23.5" y="22" width="2.00218" height="10" transform="rotate(-43.945 26 23.3895)" />
+                                <circle id="bgIcon" cx="20.5" cy="19.5" r="5.5"  stroke-width="2"/>
+                                <circle id="bgIcon" cx="20.5" cy="19.5" r="4.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="header_item"><a href="/html/postAdd.html">
+                        Добавить обьявление</a>
+                    </div>
+                </div>
+                <div class="header_inner_left">
+                    <div class="header_item"><a href="#">
+                        Лайк</a></div>
+                    <div class="header_item"><a href="#">
+                        Сообщения</a></div>
+                    <div class="headerButton">
+                        <button>
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
+                                <path id='bgIcon' d="M13 13L15.08 13.36L16.043 24.833C16.12 25.77 16.903 26.489 17.843 26.486H28.752C29.649 26.488 30.41 25.828 30.537 24.94L31.486 18.382C31.592 17.649 31.083 16.969 30.351 16.863C30.287 16.854 15.414 16.849 15.414 16.849"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle id="dgIconAc" cx="19.5" cy="29.5" r="1.5" />
+                                <circle id="dgIconAc" cx="27.5" cy="29.5" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="headerButton">
+                        <button data-modal>
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
+                                <path id='dgIconAc' fill-rule="evenodd" clip-rule="evenodd" d="M17.5362 18.6522C17.5362 21.0294 19.5349 22.9565 22 22.9565C24.4651 22.9565 26.4638 21.0294 26.4638 18.6522C26.4638 16.275 24.4651 14.3478 22 14.3478C19.5349 14.3478 17.5362 16.275 17.5362 18.6522ZM19.7681 18.6522C19.7681 19.8408 20.7669 20.8043 22 20.8043C23.2331 20.8043 24.2319 19.8408 24.2319 18.6522C24.2319 17.4635 23.2331 16.5 22 16.5C20.7669 16.5 19.7681 17.4635 19.7681 18.6522Z" />
+                                <path id='dgIconAc' fill-rule="evenodd" clip-rule="evenodd" d="M22 9.88405C28.6913 9.88405 34.116 15.3086 34.116 22C34.116 28.6914 28.6913 34.1159 22 34.1159C15.3087 34.1159 9.88409 28.6914 9.88409 22C9.88409 15.3086 15.3087 9.88405 22 9.88405ZM31.9131 22C31.9131 24.3022 31.1277 26.4212 29.8115 28.1039C28.0007 25.7327 25.1435 24.2029 21.9295 24.2029C18.7562 24.2029 15.9321 25.6933 14.1181 28.012C12.8437 26.3444 12.087 24.2606 12.087 22C12.087 16.5251 16.5247 12.0869 22 12.0869C27.4753 12.0869 31.9131 16.5251 31.9131 22ZM22 31.913C24.3682 31.913 26.5424 31.0824 28.2475 29.6967C26.853 27.7068 24.5433 26.4058 21.9295 26.4058C19.3477 26.4058 17.0622 27.6748 15.6623 29.623C17.3805 31.0529 19.5901 31.913 22 31.913Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <hr>
+
+    <div class="post_add container_post_add">
+        <div class="container">
+            <div class="post_add">
+                <h2 class="title_post_add">Создание объявления</h2>
+                <div class="short_description content_block">
+                    <h3 class="text_h3_post_add">Опишите в подробностях</h3>
+                    <input class="input_post_add input_poduct_name" id="my-input" type="text" placeholder="Укажите название">
+                    <div id="my-input-remaining-chars">0/70</div>
+                    <h3 class="text_h3_post_add">Категория</h3>
+                    <div class="select-box">
+                        <div class="options-container">
+                            <div class="option">
+                                <input type="radio" class="radio" id="kids" name="category" />
+                                <label for="kids">Детские товары</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="privacy" name="category" />
+                                <label for="privacy">Недвижимость</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="vehicles" name="category" />
+                                <label for="vehicles">Транспорт</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="animals" name="category" />
+                                <label for="animals">Животные</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="job" name="category" />
+                                <label for="job">Работа</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="details" name="category" />
+                                <label for="details">Запчасти для транспорта</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="house" name="category" />
+                                <label for="house">Дом и сад</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="electricity" name="category" />
+                                <label for="electricity">Электроника</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="bussines" name="category" />
+                                <label for="bussines">Бизнес и услуги</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="fashion" name="category" />
+                                <label for="fashion">Мода и стиль</label>
+                            </div>
+
+                            <div class="option">
+                                <input type="radio" class="radio" id="sport" name="category" />
+                                <label for="sport">Спорт и отдых</label>
+                            </div>
+
+                        </div>
+                        <div class="selected">
+                            Выберите категорию
+                        </div>
+                        <div class="search-box">
+                            <input class="input_product_catalog" type="text" placeholder="Введите название категории..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_block">
+                <h3 class="text_h3_post_add">Фотографии</h3>
+                <h4 class="text_h4_post_add">Объявления с фото получают в среднем в 3-5 раз больше откликов</h4>
+                <div class="contant_photo_add">
+                    <div class="add_photos">
+                        <button id="btn_add_photos">
+                            <svg id="upload-photo-icon" width="45" height="45" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4913 7.04599C11.0775 5.98064 11.7152 5.26846 12.6614 4.89184C14.3954 4.20237 20.6055 4.20237 22.3381 4.89198C23.2839 5.2684 23.9218 5.98045 24.5084 7.04558L25.1679 8.31018C25.183 8.33523 25.1969 8.35727 25.2093 8.37623L25.2653 8.4528C25.5658 8.7802 26.0686 8.97799 26.4005 8.97799C29.5389 8.97799 32.0837 11.5222 32.0837 14.6597V23.1107C32.0837 27.1127 28.8377 30.3586 24.8357 30.3586H10.1649C6.16194 30.3586 2.91699 27.1131 2.91699 23.1107V14.6597C2.91699 11.5222 5.46175 8.97799 8.60012 8.97799C8.93083 8.97799 9.4344 8.77991 9.73534 8.4528C9.74135 8.44625 9.7492 8.43649 9.75869 8.42358L9.83368 8.30854L10.4913 7.04599ZM22.5923 8.10092C22.2278 7.43907 21.8984 7.07135 21.5292 6.92441L21.3552 6.86657C19.8543 6.44236 14.6338 6.46164 13.47 6.92441C13.101 7.07128 12.7719 7.4388 12.4079 8.10052L11.8466 9.18566L11.7085 9.43566C11.5931 9.62747 11.4778 9.78939 11.3461 9.9329C10.6075 10.7357 9.51486 11.1655 8.60012 11.1655L8.36081 11.1736C6.54205 11.2965 5.10449 12.8108 5.10449 14.6597V23.1107C5.10449 25.9051 7.37014 28.1711 10.1649 28.1711H24.8357C27.6296 28.1711 29.8962 25.9046 29.8962 23.1107V14.6597C29.8962 12.7304 28.3309 11.1655 26.4005 11.1655L26.1466 11.1549C25.2883 11.0843 24.3243 10.6626 23.6537 9.93193C23.5237 9.79032 23.409 9.62956 23.2944 9.43936C23.2779 9.41208 23.2575 9.37616 23.234 9.33366L23.0647 9.01611L22.5923 8.10092Z"/>
+                                <path d="M25.5274 12.3959C26.3328 12.3959 26.9857 13.0488 26.9857 13.8542C26.9857 14.6021 26.4227 15.2185 25.6974 15.3027L25.5274 15.3125C24.7088 15.3125 24.0559 14.6596 24.0559 13.8542C24.0559 13.1063 24.6189 12.4899 25.3442 12.4057L25.5274 12.3959Z" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7703 19.1451C11.7703 15.9802 14.3352 13.4153 17.5001 13.4153C20.6649 13.4153 23.2298 15.9802 23.2298 19.1451C23.2298 22.31 20.6649 24.8749 17.5001 24.8749C14.3352 24.8749 11.7703 22.31 11.7703 19.1451ZM21.0423 19.1451C21.0423 17.1883 19.4568 15.6028 17.5001 15.6028C15.5433 15.6028 13.9578 17.1883 13.9578 19.1451C13.9578 21.1018 15.5433 22.6874 17.5001 22.6874C19.4568 22.6874 21.0423 21.1018 21.0423 19.1451Z" />
+                            </svg>
+                        </button>
+                        <input id="file_input_photos" type="file" hidden>
+                    </div>
+                </div>
+            </div>
+            <div class="product_description content_block">
+                <h3 class="text_h3_post_add">Описание</h3>
+                <textarea id="my-textarea" class="input_post_add input_product_description" placeholder="Опишите свой товар"></textarea>
+                <div id="my-textarea-remaining-chars">0/500</div>
+            </div>
+            <div class="contact_information content_block">
+                <h3 class="text_h3_post_add">Контактная информация</h3>
+                <h4 class="text_h4_post_add">Местоположение</h4>
+                <input class="input_post_add input_name_city" type="text" placeholder="Название города">
+                <h4 class="text_h4_post_add">Контактное лицо</h4>
+                <input class="input_post_add input_name_account" type="text" placeholder="Имя вашего аккаунта">
+                <h4 class="text_h4_post_add">Email-адресс</h4>
+                <input class="input_post_add input_email" type="text" placeholder="Ваш email-адресс">
+                <h4 class="text_h4_post_add">Номер телефона</h4>
+                <input class="input_post_add input_phone" type="text" placeholder="Номер телефона">
+            </div>
+            <a href="../index.html">
+                <button id="publish_post">Опубликовать</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <div class="login-box">
+                    <form action="">
+                        <div data-close class="modalClose">&times;</div>
+                        <h1>Войти</h1>
+                        <div class="textbox">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Имя пользователя">
+                        </div>
+
+                        <div class="textbox">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Пароль">
+                        </div>
+
+                        <input type="button" class="btnSin" value="Войти">
+
+                    </form>
+
+                </div>
+                <hr>
+                <div class="log_icones">
+                    Войти с помощью:
+                    <button>
+                        <img src="../png/google_iconP.png" alt="Google" width="50" height="50">
+                    </button>
+                    <button>
+                        <img src="../png/github_iconP.png" alt="GitHub" width="50" height="50">
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+
+</html>
