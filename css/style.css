@@ -363,6 +363,18 @@ hr {
     color: var(--black_ligth);
 }
 
+.work_btn_price button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s all;
+    stroke: var(--black_ligth);
+    fill: var(--black_ligth);
+    border: 2px solid;
+    border-radius: 6px;
+    border-color: var(--black_ligth);
+}
+
 .work_btn_like button {
     background: none;
     border: none;
@@ -383,8 +395,9 @@ hr {
 
 .work_btn_like {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
+    /* justify-content: space-between; */
     align-items: center;
     border: 2px solid;
     border-radius: 6px;
@@ -456,7 +469,7 @@ input[type=password]:focus {
     background: none;
     color: var(--black_ligth);
     border: 3px solid;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     width: 100%;
 }
 
@@ -502,7 +515,6 @@ input[type=password]:focus {
 
 .text_h3_post_add {
     font-size: 24px;
-    margin-left: 20px;
     margin-top: 10px;
     position: relative;
 }
@@ -697,7 +709,7 @@ input[type=password]:focus {
 
 .photo_advertisment {
     height: 500px;
-    width: 1200px;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 0 4px var(--black_ligth);
     border-radius: 10px;
