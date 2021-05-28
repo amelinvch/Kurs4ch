@@ -58,7 +58,6 @@ myInput.addEventListener('input', () => {
 
 myTextArea.setAttribute('maxlength', '500');
 myInput.setAttribute('maxlength', '70');
-<<<<<<< HEAD
 
 //.........................Добавление фото..............
 
@@ -78,29 +77,13 @@ btnAddPhotos.onclick = () => {
         borderPhotoAdd.classList.add('add_photos');
         contantPhoto[contantPhoto.length - 1].append(borderPhotoAdd);
     }
-=======
-//.........................Добавление поста..............
-
-const dropArea = document.querySelector(".add_photos");
-const btnAddPhotos = document.getElementById("btn_add_photos");
-const fileInput = document.getElementById("file_input_photos");
-let filePhotos;
-
-btnAddPhotos.onclick = () => {
-    fileInput.click(); //если пользователь нажимает кнопку, то ввод также нажимаеться
->>>>>>> main
 };
 
 fileInput.addEventListener("change", function() {
     filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
-<<<<<<< HEAD
     dropPhotoAdd.classList.add("active");
     showFile();
 
-=======
-    dropArea.classList.add("active");
-    showFile();
->>>>>>> main
 });
 
 function showFile() {
@@ -111,16 +94,11 @@ function showFile() {
         fileReader.onload = () => {
             let fileURL = fileReader.result; //передача источника файла пользователя в fileURL
             let imgTag = `<img src="${fileURL}" alt="">`; //создание тега img и передача в атрибута src
-<<<<<<< HEAD
             dropPhotoAdd.innerHTML = imgTag; //добавление созданного тега img внутри контейнера dropPhotoAdd
-=======
-            dropArea.innerHTML = imgTag; //добавление созданного тега img внутри контейнера dropArea
->>>>>>> main
         };
         fileReader.readAsDataURL(filePhotos);
     } else {
         alert("Это не изображение!");
-<<<<<<< HEAD
         dropPhotoAdd.classList.remove("active");
     }
 }
@@ -154,31 +132,3 @@ function inputText() {
 }
 
 btnPublickPost.addEventListener('click', inputText);
-=======
-        dropArea.classList.remove("active");
-    }
-}
-
-
-
-const btnPublickPost = document.getElementById('publish_post');
-
-function inputText() {
-    const productName = document.querySelector('.input_poduct_name').value;
-    const productDescription = document.querySelector('.input_product_description').value;
-    const productCatalog = document.querySelector('.input_product_catalog').value;
-    const nameCity = document.querySelector('.input_name_city').value;
-    const nameAccount = document.querySelector('.input_name_account').value;
-    const nameEmail = document.querySelector('.input_email').value;
-    const namePhone = document.querySelector('.input_phone').value;
-    console.log(`Имя пр: ${productName}`);
-    console.log(`Каталог: ${productCatalog}`);
-    console.log(`Описание: ${productDescription}`);
-    console.log(`Сити: ${nameCity}`);
-    console.log(`Акк: ${nameAccount}`);
-    console.log(`Емаил: ${nameEmail}`);
-    console.log(`Телефон: ${namePhone}`);
-}
-
-btnPublickPost.addEventListener('click', inputText);
->>>>>>> main
