@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     posts.splice(i, i + 1);
                     localStorage.setItem("posts", JSON.stringify(posts));
                     location.reload();
+
                 }
             }
         });
