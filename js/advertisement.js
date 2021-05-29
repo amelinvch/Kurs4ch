@@ -4,12 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const posts = JSON.parse(localStorage.getItem('posts'));
     let container = document.querySelector('.catalog_example_ad2');
-    let count = '0';
     for (const post of posts) {
-        if (post.postId == count) {
+        if (post.postId == document.cookie) {
             const photos = document.createElement('div');
             photos.className = 'photo_advertisment';
-            photos.innerHTML = post.photoPost;
+            photos.innerHTML = `${post.photoPost}`;
 
             const nameProduct = document.createElement('div');
             nameProduct.className = 'text_h3_post_add content_block';
@@ -28,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productContInfo.innerText = `Контактная информация
             Город: ${post.nameCity}.
             Номер телефона: ${post.namePhone}
-            Почта: ${post.nameEmail}`
-
-            ;
+            Почта: ${post.nameEmail}`;
 
             container.append(photos);
             container.append(nameProduct);
@@ -39,22 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nameProduct.append(productPrice);
         }
     }
-
-
-
-    // const btnSwap = document.querySelectorAll('.work_btn_price');
-    // btnSwap.forEach(btn => {
-    //     btn.addEventListener('click', function() {
-    //         btn.classList.toggle('work_btn_like2');
-    //         const counBtnLike = btn.querySelector('.like_btn_counter');
-    //         let className = btn.className;
-    //         if (className == "work_btn_like") {
-    //             counBtnLike.textContent--;
-    //         } else {
-    //             counBtnLike.textContent++;
-    //         }
-    //     });
-    // });
 
 
 });
