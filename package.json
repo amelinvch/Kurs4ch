@@ -1,0 +1,23 @@
+{
+  "name": "kursa4",
+  "version": "1.0.0",
+  "description": "Coursework \"Site\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vchamelin/Kurs.git"
+  },
+  "author": "Slava & Artem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vchamelin/Kurs/issues"
+  },
+  "homepage": "https://github.com/vchamelin/Kurs#readme",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "prettier": "^2.3.0"
+  }
+}

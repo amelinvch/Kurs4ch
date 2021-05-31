@@ -5,30 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*Category window*/
 
-    const selected = document.querySelector(".selected");
-    const optionsContainer = document.querySelector(".options-container");
-    const searchBox = document.querySelector(".search-box input");
-    const optionsList = document.querySelectorAll(".option");
+    const selected = document.querySelector('.selected');
+    const optionsContainer = document.querySelector('.options-container');
+    const searchBox = document.querySelector('.search-box input');
+    const optionsList = document.querySelectorAll('.option');
 
-    selected.addEventListener("click", () => {
-        optionsContainer.classList.toggle("active");
+    selected.addEventListener('click', () => {
+        optionsContainer.classList.toggle('active');
 
-        searchBox.value = "";
-        filterList("");
+        searchBox.value = '';
+        filterList('');
 
-        if (optionsContainer.classList.contains("active")) {
+        if (optionsContainer.classList.contains('active')) {
             searchBox.focus();
         }
     });
 
     optionsList.forEach(o => {
-        o.addEventListener("click", () => {
-            selected.innerHTML = o.querySelector("label").innerHTML;
-            optionsContainer.classList.remove("active");
+        o.addEventListener('click', () => {
+            selected.innerHTML = o.querySelector('label').innerHTML;
+            optionsContainer.classList.remove('active');
         });
     });
 
-    searchBox.addEventListener("keyup", function(e) {
+    searchBox.addEventListener('keyup', function(e) {
         filterList(e.target.value);
     });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchTerm = searchTerm.toLowerCase();
         optionsList.forEach(option => {
             const label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-            label.indexOf(searchTerm) !== -1 ? option.style.display = "block" : option.style.display = "none";
+            label.indexOf(searchTerm) !== -1 ? option.style.display = 'block' : option.style.display = 'none';
         });
     };
 
@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //.........................Добавление фото..............
 
-    const dropPhotoAdd = document.querySelector(".add_photos");
-    const btnAddPhotos = document.getElementById("btn_add_photos");
-    const fileInput = document.getElementById("file_input_photos");
+    const dropPhotoAdd = document.querySelector('.add_photos');
+    const btnAddPhotos = document.getElementById('btn_add_photos');
+    const fileInput = document.getElementById('file_input_photos');
     let filePhotos;
     let countClick = 1;
 
@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    fileInput.addEventListener("change", function() {
+    fileInput.addEventListener('change', function() {
         filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
-        dropPhotoAdd.classList.add("active");
+        dropPhotoAdd.classList.add('active');
         showFile();
 
     });
 
     function showFile() {
         let fileType = filePhotos.type; //получение выбранного типа файла
-        let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; //формат фото
+        let validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
         if (validExtensions.includes(fileType)) { //Если файл изображение
             let fileReader = new FileReader(); //созаём новый FileReader
             fileReader.onload = () => {
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             fileReader.readAsDataURL(filePhotos);
         } else {
-            alert("Это не изображение!");
-            dropPhotoAdd.classList.remove("active");
+            alert('Это не изображение!');
+            dropPhotoAdd.classList.remove('active');
         }
     }
 
@@ -122,32 +122,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btnPublickPost = document.getElementById('publish_post');
 
-
     function inputText() {
         const posts = localStorage.getItem('posts');
         let postInfo = {
             postId: 0,
             productLike: 228,
         };
-        postInfo.productName = document.querySelector('.input_poduct_name').value;
-        postInfo.productPrice = document.querySelector('.input_poduct_price').value;
-        postInfo.productDescription = document.querySelector('.input_product_description').value;
-        postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
-        postInfo.nameCity = document.querySelector('.input_name_city').value;
-        postInfo.nameAccount = document.querySelector('.input_name_account').value;
-        postInfo.nameEmail = document.querySelector('.input_email').value;
-        postInfo.namePhone = document.querySelector('.input_phone').value;
-        postInfo.photoPost = dropPhotoAdd.innerHTML;
 
-        if (posts) {
-            let parsed = JSON.parse(posts);
-            postInfo.postId = parsed.length;
-            parsed.push(postInfo);
-            localStorage.setItem('posts', JSON.stringify(parsed));
-        } else {
-            localStorage.setItem('posts', JSON.stringify([postInfo]));
+        let flag = true;
+        const field = document.querySelectorAll('.input_post_add');
+        field.forEach(function(item) {
+            if (item.value) {
+                document.getElementById('submit').href = '../index.html';
+                flag = true;
+                return flag;
+            }
+            item.style.borderColor = 'red';
+            flag = false;
+            return flag;
+        });
 
+        if (flag) {
+            postInfo.productName = document.querySelector('.input_poduct_name').value;
+            postInfo.productPrice = document.querySelector('.input_poduct_price').value;
+            postInfo.productDescription = document.querySelector('.input_product_description').value;
+            postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
+            postInfo.nameCity = document.querySelector('.input_name_city').value;
+            postInfo.nameAccount = document.querySelector('.input_name_account').value;
+            postInfo.nameEmail = document.querySelector('.input_email').value;
+            postInfo.namePhone = document.querySelector('.input_phone').value;
+            postInfo.photoPost = dropPhotoAdd.innerHTML;
+
+            if (posts) {
+                let parsed = JSON.parse(posts);
+                postInfo.postId = parsed.length;
+                parsed.push(postInfo);
+                localStorage.setItem('posts', JSON.stringify(parsed));
+            } else {
+                localStorage.setItem('posts', JSON.stringify([postInfo]));
+            }
         }
+
     }
 
     btnPublickPost.addEventListener('click', inputText);
