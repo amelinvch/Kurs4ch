@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		btn.addEventListener('click', function() {
 			for (let i = 0; i < btnSwap.length; i++) {
 				if (btnSwap[i] == btn) {
-					posts.splice(i, i + 1);
+					console.log('dss');
+					posts.splice(i, 1);
 					localStorage.setItem('posts', JSON.stringify(posts));
 					location.reload();
 				}

@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		const user = localStorage.getItem('user');
 		let userInfo = {
 			userId: 0,
-			arrayLike: [],
+			like: [0],
 		};
 		userInfo.userName = document.querySelector('.user_name').value;
 		userInfo.userEmail = document.querySelector('.user_password').value;
 		if (user) {
 			let parsed = JSON.parse(user);
-			userInfo.postId = parsed.length;
+			userInfo.userId = parsed.length;
 			parsed.push(userInfo);
 			localStorage.setItem('user', JSON.stringify(parsed));
 		} else {

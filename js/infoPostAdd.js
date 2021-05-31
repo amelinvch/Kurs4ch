@@ -3,81 +3,81 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /*Category window*/
+	/*Category window*/
 
-    const selected = document.querySelector('.selected');
-    const optionsContainer = document.querySelector('.options-container');
-    const searchBox = document.querySelector('.search-box input');
-    const optionsList = document.querySelectorAll('.option');
+	const selected = document.querySelector('.selected');
+	const optionsContainer = document.querySelector('.options-container');
+	const searchBox = document.querySelector('.search-box input');
+	const optionsList = document.querySelectorAll('.option');
 
-    selected.addEventListener('click', () => {
-        optionsContainer.classList.toggle('active');
+	selected.addEventListener('click', () => {
+		optionsContainer.classList.toggle('active');
 
-        searchBox.value = '';
-        filterList('');
+		searchBox.value = '';
+		filterList('');
 
-        if (optionsContainer.classList.contains('active')) {
-            searchBox.focus();
-        }
-    });
+		if (optionsContainer.classList.contains('active')) {
+			searchBox.focus();
+		}
+	});
 
-    optionsList.forEach(o => {
-        o.addEventListener('click', () => {
-            selected.innerHTML = o.querySelector('label').innerHTML;
-            optionsContainer.classList.remove('active');
-        });
-    });
+	optionsList.forEach(o => {
+		o.addEventListener('click', () => {
+			selected.innerHTML = o.querySelector('label').innerHTML;
+			optionsContainer.classList.remove('active');
+		});
+	});
 
-    searchBox.addEventListener('keyup', function(e) {
-        filterList(e.target.value);
-    });
+	searchBox.addEventListener('keyup', function(e) {
+		filterList(e.target.value);
+	});
 
-    const filterList = searchTerm => {
-        searchTerm = searchTerm.toLowerCase();
-        optionsList.forEach(option => {
-            const label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-            label.indexOf(searchTerm) !== -1 ? option.style.display = 'block' : option.style.display = 'none';
-        });
-    };
+	const filterList = searchTerm => {
+		searchTerm = searchTerm.toLowerCase();
+		optionsList.forEach(option => {
+			const label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+			label.indexOf(searchTerm) !== -1 ? option.style.display = 'block' : option.style.display = 'none';
+		});
+	};
 
-    /*...........Counter of letters...........*/
+	/*...........Counter of letters...........*/
 
-    const myInput = document.getElementById('my-input');
-    const myTextArea = document.getElementById('my-textarea');
-    const remainingCharsInput = document.getElementById('my-input-remaining-chars');
-    const remainingCharsTextArea = document.getElementById('my-textarea-remaining-chars');
-    const MAX_CHARS = 500;
-    const MAX_CHARS_INPUT = 70;
+	const myInput = document.getElementById('my-input');
+	const myTextArea = document.getElementById('my-textarea');
+	const remainingCharsInput = document.getElementById('my-input-remaining-chars');
+	const remainingCharsTextArea = document.getElementById('my-textarea-remaining-chars');
+	const MAX_CHARS = 500;
+	const MAX_CHARS_INPUT = 70;
 
-    myTextArea.addEventListener('input', () => {
-        const remaining = myTextArea.value.length;
-        remainingCharsTextArea.textContent = `${remaining}/${MAX_CHARS}`;
-    });
+	myTextArea.addEventListener('input', () => {
+		const remaining = myTextArea.value.length;
+		remainingCharsTextArea.textContent = `${remaining}/${MAX_CHARS}`;
+	});
 
-    myInput.addEventListener('input', () => {
-        const remaining = myInput.value.length;
-        remainingCharsInput.textContent = `${remaining}/ ${MAX_CHARS_INPUT}`;
-    });
+	myInput.addEventListener('input', () => {
+		const remaining = myInput.value.length;
+		remainingCharsInput.textContent = `${remaining}/ ${MAX_CHARS_INPUT}`;
+	});
 
-    myTextArea.setAttribute('maxlength', MAX_CHARS);
-    myInput.setAttribute('maxlength', MAX_CHARS_INPUT);
+	myTextArea.setAttribute('maxlength', MAX_CHARS);
+	myInput.setAttribute('maxlength', MAX_CHARS_INPUT);
 
-    //.........................Добавление фото..............
+	//.........................Добавление фото..............
 
-    const dropPhotoAdd = document.querySelector('.add_photos');
-    const btnAddPhotos = document.getElementById('btn_add_photos');
-    const fileInput = document.getElementById('file_input_photos');
-    let filePhotos;
-    let countClick = 1;
+	const dropPhotoAdd = document.querySelector('.add_photos');
+	const btnAddPhotos = document.getElementById('btn_add_photos');
+	const fileInput = document.getElementById('file_input_photos');
+	let filePhotos;
+	let countClick = 1;
 
 
-    btnAddPhotos.onclick = () => {
-        fileInput.click(); //если пользователь нажимает кнопку, то ввод также нажимаеться
-        const maxAddPhoto = 6;
-        if (countClick < maxAddPhoto) {
-            const borderPhotoAdd = document.createElement('div');
-            const contantPhoto = document.querySelectorAll('.contant_photo_add');
-            borderPhotoAdd.innerHTML = `
+	btnAddPhotos.onclick = () => {
+		fileInput.click(); //если пользователь нажимает кнопку, то ввод также нажимаеться
+		const maxAddPhoto = 6;
+		if (countClick < maxAddPhoto) {
+			const borderPhotoAdd = document.createElement('div');
+			const contantPhoto = document.querySelectorAll('.contant_photo_add');
+			borderPhotoAdd.innerHTML = `
         <div class="contant_photo_add">
             <div class="add_photos">
                 <button id="btn_add_photos">
@@ -90,80 +90,80 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input id="file_input_photos" type="file" hidden>
             </div>
         </div>`;
-            contantPhoto[contantPhoto.length - 1].append(borderPhotoAdd);
-        }
-    };
+			contantPhoto[contantPhoto.length - 1].append(borderPhotoAdd);
+		}
+	};
 
-    fileInput.addEventListener('change', function() {
-        filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
-        dropPhotoAdd.classList.add('active');
-        showFile();
+	fileInput.addEventListener('change', function() {
+		filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
+		dropPhotoAdd.classList.add('active');
+		showFile();
 
-    });
+	});
 
-    function showFile() {
-        let fileType = filePhotos.type; //получение выбранного типа файла
-        let validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
-        if (validExtensions.includes(fileType)) { //Если файл изображение
-            let fileReader = new FileReader(); //созаём новый FileReader
-            fileReader.onload = () => {
-                let fileURL = fileReader.result; //передача источника файла пользователя в fileURL
-                let imgTag = `<img src="${fileURL}" alt="">`; //создание тега img и передача в атрибута src
-                dropPhotoAdd.innerHTML = imgTag; //добавление созданного тега img внутри контейнера dropPhotoAdd
-            };
-            fileReader.readAsDataURL(filePhotos);
-        } else {
-            alert('Это не изображение!');
-            dropPhotoAdd.classList.remove('active');
-        }
-    }
+	function showFile() {
+		let fileType = filePhotos.type; //получение выбранного типа файла
+		let validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
+		if (validExtensions.includes(fileType)) { //Если файл изображение
+			let fileReader = new FileReader(); //созаём новый FileReader
+			fileReader.onload = () => {
+				let fileURL = fileReader.result; //передача источника файла пользователя в fileURL
+				let imgTag = `<img src="${fileURL}" alt="">`; //создание тега img и передача в атрибута src
+				dropPhotoAdd.innerHTML = imgTag; //добавление созданного тега img внутри контейнера dropPhotoAdd
+			};
+			fileReader.readAsDataURL(filePhotos);
+		} else {
+			alert('Это не изображение!');
+			dropPhotoAdd.classList.remove('active');
+		}
+	}
 
-    //.................Добавление поста....................
+	//.................Добавление поста....................
 
-    const btnPublickPost = document.getElementById('publish_post');
+	const btnPublickPost = document.getElementById('publish_post');
 
-    function inputText() {
-        const posts = localStorage.getItem('posts');
-        let postInfo = {
-            postId: 0,
-            productLike: 228,
-        };
+	function inputText() {
+		const posts = localStorage.getItem('posts');
+		let postInfo = {
+			postId: 0,
+			productLike: 228,
+		};
 
-        let flag = true;
-        const field = document.querySelectorAll('.input_post_add');
-        field.forEach(function(item) {
-            if (item.value) {
-                document.getElementById('submit').href = '../index.html';
-                flag = true;
-                return flag;
-            }
-            item.style.borderColor = 'red';
-            flag = false;
-            return flag;
-        });
+		let flag = true;
+		const field = document.querySelectorAll('.input_post_add');
+		field.forEach(function(item) {
+			if (item.value) {
+				document.getElementById('submit').href = '../index.html';
+				flag = true;
+				return flag;
+			}
+			item.style.borderColor = 'red';
+			flag = false;
+			return flag;
+		});
 
-        if (flag) {
-            postInfo.productName = document.querySelector('.input_poduct_name').value;
-            postInfo.productPrice = document.querySelector('.input_poduct_price').value;
-            postInfo.productDescription = document.querySelector('.input_product_description').value;
-            postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
-            postInfo.nameCity = document.querySelector('.input_name_city').value;
-            postInfo.nameAccount = document.querySelector('.input_name_account').value;
-            postInfo.nameEmail = document.querySelector('.input_email').value;
-            postInfo.namePhone = document.querySelector('.input_phone').value;
-            postInfo.photoPost = dropPhotoAdd.innerHTML;
+		if (flag) {
+			postInfo.productName = document.querySelector('.input_poduct_name').value;
+			postInfo.productPrice = document.querySelector('.input_poduct_price').value;
+			postInfo.productDescription = document.querySelector('.input_product_description').value;
+			postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
+			postInfo.nameCity = document.querySelector('.input_name_city').value;
+			postInfo.nameAccount = document.querySelector('.input_name_account').value;
+			postInfo.nameEmail = document.querySelector('.input_email').value;
+			postInfo.namePhone = document.querySelector('.input_phone').value;
+			postInfo.photoPost = dropPhotoAdd.innerHTML;
 
-            if (posts) {
-                let parsed = JSON.parse(posts);
-                postInfo.postId = parsed.length;
-                parsed.push(postInfo);
-                localStorage.setItem('posts', JSON.stringify(parsed));
-            } else {
-                localStorage.setItem('posts', JSON.stringify([postInfo]));
-            }
-        }
+			if (posts) {
+				let parsed = JSON.parse(posts);
+				postInfo.postId = parsed.length;
+				parsed.push(postInfo);
+				localStorage.setItem('posts', JSON.stringify(parsed));
+			} else {
+				localStorage.setItem('posts', JSON.stringify([postInfo]));
+			}
+		}
 
-    }
+	}
 
-    btnPublickPost.addEventListener('click', inputText);
+	btnPublickPost.addEventListener('click', inputText);
 });
