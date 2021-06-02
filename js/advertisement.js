@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	const posts = JSON.parse(localStorage.getItem('posts'));
 	let container = document.querySelector('.catalog_example_ad2');
 	for (const post of posts) {
@@ -36,6 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			nameProduct.append(productPrice);
 		}
 	}
-
-
 });

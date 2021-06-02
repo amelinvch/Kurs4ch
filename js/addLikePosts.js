@@ -1,13 +1,10 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	//................Добавленеи поста................
 	const posts = JSON.parse(localStorage.getItem('posts'));
 	let container = document.querySelector('.catalog_example_ad');
 	const user = JSON.parse(localStorage.getItem('user'));
-
-
 
 	for (let i = 0; i < user[0].like.length; i++) {
 		if (user[0].like[i] != undefined) {
@@ -93,8 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			workButtonMore.append(workBinBtn);
 
 			container.append(newPost);
-
 		}
-
 	}
 });

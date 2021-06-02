@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const modalCloseBtn = document.querySelector('[data-close]');
 	const btnSin = document.querySelector('.btnSin');
 
-
-	modalTrigger.forEach(btn => {
-		btn.addEventListener('click', function() {
+	modalTrigger.forEach((btn) => {
+		btn.addEventListener('click', function () {
 			modal.classList.add('show');
 			modal.classList.remove('hide');
 			document.body.style.overflow = 'hidden';
