@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const user = localStorage.getItem('user');
 		let userInfo = {
 			userId: 0,
-			like: [0],
+			like: [],
 		};
 		userInfo.userName = document.querySelector('.user_name').value;
 		userInfo.userEmail = document.querySelector('.user_password').value;
