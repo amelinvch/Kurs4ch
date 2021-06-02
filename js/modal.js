@@ -38,20 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	btnSin.addEventListener('click', user);
 
 	function user() {
-		const user = localStorage.getItem('user');
 		let userInfo = {
 			userId: 0,
-			like: [],
+			like: [1],
 		};
 		userInfo.userName = document.querySelector('.user_name').value;
-		userInfo.userEmail = document.querySelector('.user_password').value;
-		if (user) {
-			let parsed = JSON.parse(user);
-			userInfo.userId = parsed.length;
-			parsed.push(userInfo);
-			localStorage.setItem('user', JSON.stringify(parsed));
-		} else {
-			localStorage.setItem('user', JSON.stringify([userInfo]));
-		}
+		userInfo.userPassword = document.querySelector('.user_password').value;
+
+		document.cookie = JSON.stringify(userInfo);
 	}
 });

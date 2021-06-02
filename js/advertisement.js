@@ -2,9 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	const posts = JSON.parse(localStorage.getItem('posts'));
-	let container = document.querySelector('.catalog_example_ad2');
+	const container = document.querySelector('.catalog_example_ad2');
+	let href = document.location.href;
 	for (const post of posts) {
-		if (post.postId == document.cookie) {
+		if (post.postId == href.split('?id=')[1]) {
 			const photos = document.createElement('div');
 			photos.className = 'photo_advertisment';
 			photos.innerHTML = `${post.photoPost}`;

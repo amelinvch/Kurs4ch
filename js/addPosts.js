@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	//................Добавленеи поста................
 	const posts = JSON.parse(localStorage.getItem('posts'));
-	const user = JSON.parse(localStorage.getItem('user'));
+	const like = document.cookie.split('[')[1].split(']')[0].split(',');
 	let container = document.querySelector('.catalog_example_ad');
 
 	for (const post of posts) {
@@ -30,12 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		workPrice.innerText = `Цена: ${post.productPrice} грн`;
 
 		const workButtonLike = document.createElement('div');
-
-		if (user[0].like.length != '') {
-			for (let i = 0; i < user[0].like.length; i++) {
-				if (user[0].like[i] == post.postId) {
+		if (like != '') {
+			for (let i = 0; i < like.length; i++) {
+				if (like[i] == post.postId) {
 					workButtonLike.className = 'work_btn_like work_btn_like2';
-					i = user[0].like.length;
 				} else {
 					workButtonLike.className = 'work_btn_like';
 				}
@@ -61,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		workButtonMore.innerHTML = `
             <button class="#">
                 <div class="work_counter_like">
-                    <a class="more-information" href="../html/advertisement.html">Подробнее</a>
+                    <a class="more-information" href="../html/advertisement.html?id=${post.postId}">Подробнее</a>
                 </div>
             </button>
         `;

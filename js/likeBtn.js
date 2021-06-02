@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// .........Кнопка Лайка............
 
 	const btnLike = document.querySelectorAll('.work_btn_like');
-	const user = JSON.parse(localStorage.getItem('user'));
-	let arrayLike = user[`${0}`].like;
+	let user = document.cookie.split('[')[1].split(']')[0];
+	let like = [];
+	if (user != '') {
+		like = user.split(',');
+	}
 	btnLike.forEach((btn) => {
 		btn.addEventListener('click', function () {
 			btn.classList.toggle('work_btn_like2');
@@ -15,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (btnLike[i] == btn) {
 					if (className == 'work_btn_like') {
 						counBtnLike.textContent--;
-						for (let j = 0; j < 10; j++) {
-							if (i == arrayLike[j]) {
-								arrayLike.splice(j, 1);
+						for (let j = 0; j < like.length; j++) {
+							if (i == like[j]) {
+								like.splice(j, 1);
 							}
 						}
 					} else {
@@ -27,11 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
 							newItem,
 							...arr.slice(index),
 						];
-						const result = insert(arrayLike, i, i);
-						arrayLike = result;
+						const result = insert(like, i, i);
+						like = result;
 					}
-					user[`${0}`].like = arrayLike;
-					localStorage.setItem('user', JSON.stringify(user));
+					// alert(`${document.cookie.split('[')[0]}[${like}]${document.cookie.split(']')[1]}`)
+					let cooc = `${document.cookie.split('[')[0]}[${like}]${
+						document.cookie.split(']')[1]
+					}`;
+					document.cookie = cooc;
+
+					// console.log(`${document.cookie.split('[')[0]}[${like}]${document.cookie.split(']')[1]}`);
+					//[${like}]${document.cookie.split(']')[1]}
 				}
 			}
 		});
