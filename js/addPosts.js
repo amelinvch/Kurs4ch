@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const workButtonLike = document.createElement('div');
     if (like != '') {
       for (let i = 0; i < like.length; i++) {
-        if (like[i] == post.postId) {
+        if (like[i] === post.postId) {
           workButtonLike.className = 'work_btn_like work_btn_like2';
         } else {
           workButtonLike.className = 'work_btn_like';

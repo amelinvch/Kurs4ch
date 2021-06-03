@@ -67,7 +67,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        'code': 80,
+        'code': 8000,
         'ignoreUrls': true
       }
     ],

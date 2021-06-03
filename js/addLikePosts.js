@@ -1,38 +1,38 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    //................Добавленеи поста................
-    const posts = JSON.parse(localStorage.getItem('posts'));
-    const container = document.querySelector('.catalog_example_ad');
-    const like = document.cookie.split('[')[1].split(']')[0].split(',');
+  //................Добавленеи поста................
+  const posts = JSON.parse(localStorage.getItem('posts'));
+  const container = document.querySelector('.catalog_example_ad');
+  const like = document.cookie.split('[')[1].split(']')[0].split(',');
 
-    for (let i = 0; i < like.length; i++) {
-        const j = like.length === 0 ? 0 : like[i];
-        const newPost = document.createElement('div');
-        newPost.className = 'work';
+  for (let i = 0; i < like.length; i++) {
+    const j = like.length === 0 ? 0 : like[i];
+    const newPost = document.createElement('div');
+    newPost.className = 'work';
 
-        const photos = document.createElement('div');
-        photos.className = 'photos';
-        photos.innerHTML = posts[j].photoPost;
+    const photos = document.createElement('div');
+    photos.className = 'photos';
+    photos.innerHTML = posts[j].photoPost;
 
-        const workContent = document.createElement('div');
-        workContent.className = 'work_content';
+    const workContent = document.createElement('div');
+    workContent.className = 'work_content';
 
-        const workCategory = document.createElement('div');
-        workCategory.className = 'work_category';
-        workCategory.innerText = `Категория: ${posts[j].productCatalog}`;
+    const workCategory = document.createElement('div');
+    workCategory.className = 'work_category';
+    workCategory.innerText = `Категория: ${posts[j].productCatalog}`;
 
-        const workTitle = document.createElement('div');
-        workTitle.className = 'work_title';
-        workTitle.append(posts[j].productName);
+    const workTitle = document.createElement('div');
+    workTitle.className = 'work_title';
+    workTitle.append(posts[j].productName);
 
-        const workPrice = document.createElement('div');
-        workPrice.className = 'work_price';
-        workPrice.innerText = `Цена: ${posts[j].productPrice} грн`;
+    const workPrice = document.createElement('div');
+    workPrice.className = 'work_price';
+    workPrice.innerText = `Цена: ${posts[j].productPrice} грн`;
 
-        const workButtonLike = document.createElement('div');
-        workButtonLike.className = 'work_btn_like work_btn_like2';
-        workButtonLike.innerHTML = `
+    const workButtonLike = document.createElement('div');
+    workButtonLike.className = 'work_btn_like work_btn_like2';
+    workButtonLike.innerHTML = `
                 <button class="btn-like">
                     <svg width="50" height="50" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
                         <path  clip-rule="evenodd" d="M15.8498 2.50071C16.4808 2.50071
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-        const workButtonMore = document.createElement('div');
-        workButtonMore.className = 'work_btn_price';
-        workButtonMore.innerHTML = `
+    const workButtonMore = document.createElement('div');
+    workButtonMore.className = 'work_btn_price';
+    workButtonMore.innerHTML = `
                 <button class="#">
                     <div class="work_counter_like">
                         <a class="more-information" href="../html/advertisement.html">Подробнее</a>
@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>
             `;
 
-        const workBinBtn = document.createElement('div');
-        workBinBtn.className = 'work_btn_delete';
-        workBinBtn.innerHTML = `
+    const workBinBtn = document.createElement('div');
+    workBinBtn.className = 'work_btn_delete';
+    workBinBtn.innerHTML = `
                 <button >
                     <svg height="45px" width="45px" viewBox="0 0 90 90"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                         <g>
@@ -85,18 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
                </button>
             `;
 
-        workTitle.append(workPrice);
+    workTitle.append(workPrice);
 
-        newPost.append(photos);
-        newPost.append(workContent);
+    newPost.append(photos);
+    newPost.append(workContent);
 
-        workContent.append(workCategory);
-        workContent.append(workTitle);
-        workContent.append(workButtonLike);
-        workContent.append(workButtonMore);
-        workButtonMore.append(workBinBtn);
+    workContent.append(workCategory);
+    workContent.append(workTitle);
+    workContent.append(workButtonLike);
+    workContent.append(workButtonMore);
+    workButtonMore.append(workBinBtn);
 
-        container.append(newPost);
-        // }
-    }
+    container.append(newPost);
+    // }
+  }
 });

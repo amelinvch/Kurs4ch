@@ -33,14 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = insert(like, i, i);
             like = result;
           }
-          // alert(`${document.cookie.split('[')[0]}[${like}]${document.cookie.split(']')[1]}`)
           const cooc = `${document.cookie.split('[')[0]}[${like}]${
             document.cookie.split(']')[1]
           }`;
           document.cookie = cooc;
-
-          // console.log(`${document.cookie.split('[')[0]}[${like}]${document.cookie.split(']')[1]}`);
-          //[${like}]${document.cookie.split(']')[1]}
         }
       }
     });
