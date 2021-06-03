@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const like = document.cookie.split('[')[1].split(']')[0].split(',');
 
 	for (let i = 0; i < like.length; i++) {
-		let j = like.length == 0 ? 0 : like[i];
+		let j = like.length === 0 ? 0 : like[i];
 		const newPost = document.createElement('div');
 		newPost.className = 'work';
 

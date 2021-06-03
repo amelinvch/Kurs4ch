@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (post.postId == href.split('?id=')[1]) {
 			const photos = document.createElement('div');
 			photos.className = 'photo_advertisment';
-			photos.innerHTML = `${post.photoPost}`;
+			photos.innerHTML = `${post.photoPost[1]}`;
 
 			const nameProduct = document.createElement('div');
 			nameProduct.className = 'text_h3_post_add content_block';

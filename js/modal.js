@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const btnSin = document.querySelector('.btnSin');
 
 	modalTrigger.forEach((btn) => {
-		btn.addEventListener('click', function () {
+		btn.addEventListener('click', function() {
 			modal.classList.add('show');
 			modal.classList.remove('hide');
 			document.body.style.overflow = 'hidden';
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function user() {
 		let userInfo = {
 			userId: 0,
-			like: [1],
+			like: [],
 		};
 		userInfo.userName = document.querySelector('.user_name').value;
 		userInfo.userPassword = document.querySelector('.user_password').value;
