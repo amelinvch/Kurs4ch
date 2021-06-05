@@ -1,89 +1,88 @@
 'use strict';
 
 module.exports = {
-
-  'env': {
-    'browser': true,
-    'es6': true,
-    'node': true
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
   },
-  'extends': 'eslint:recommended',
-  'parserOptions': {
-    'ecmaVersion': 2020
+  extends: 'eslint:recommended',
+  parserOptions: {
+    ecmaVersion: 2020,
   },
-  'rules': {
-    'indent': ['error', 2],
+  rules: {
+    indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    'quotes': [
+    quotes: [
       'error',
       'single',
       {
-        'allowTemplateLiterals': true
-      }
+        allowTemplateLiterals: true,
+      },
     ],
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'no-loop-func': ['error'],
     'block-spacing': ['error', 'always'],
-    'camelcase': ['error'],
-    'eqeqeq': ['error', 'always'],
-    'strict': ['error', 'global'],
+    camelcase: ['error'],
+    eqeqeq: ['error', 'always'],
+    strict: ['error', 'global'],
     'brace-style': [
       'error',
       '1tbs',
       {
-        'allowSingleLine': true
-      }
+        allowSingleLine: true,
+      },
     ],
     'comma-style': ['error', 'last'],
     'comma-spacing': [
       'error',
       {
-        'before': false,
-        'after': true
-      }
+        before: false,
+        after: true,
+      },
     ],
     'eol-last': ['error'],
     'func-call-spacing': ['error', 'never'],
     'key-spacing': [
       'error',
       {
-        'beforeColon': false,
-        'afterColon': true,
-        'mode': 'minimum'
-      }
+        beforeColon: false,
+        afterColon: true,
+        mode: 'minimum',
+      },
     ],
     'keyword-spacing': [
       'error',
       {
-        'before': true,
-        'after': true,
-        'overrides': {
-          'function': {
-            'after': false
-          }
-        }
-      }
+        before: true,
+        after: true,
+        overrides: {
+          function: {
+            after: false,
+          },
+        },
+      },
     ],
     'max-len': [
       'error',
       {
-        'code': 8000,
-        'ignoreUrls': true
-      }
+        code: 8000,
+        ignoreUrls: true,
+      },
     ],
     'max-nested-callbacks': [
       'error',
       {
-        'max': 7
-      }
+        max: 7,
+      },
     ],
     'new-cap': [
       'error',
       {
-        'newIsCap': true,
-        'capIsNew': false,
-        'properties': true
-      }
+        newIsCap: true,
+        capIsNew: false,
+        properties: true,
+      },
     ],
     'new-parens': ['error'],
     'no-lonely-if': ['error'],
@@ -96,30 +95,30 @@ module.exports = {
     'semi-spacing': [
       'error',
       {
-        'before': false,
-        'after': true
-      }
+        before: false,
+        after: true,
+      },
     ],
     'space-before-blocks': ['error', 'always'],
     'space-before-function-paren': [
       'error',
       {
-        'anonymous': 'never',
-        'named': 'never',
-        'asyncArrow': 'always'
-      }
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
     ],
     'space-in-parens': ['error', 'never'],
     'space-infix-ops': ['error'],
     'space-unary-ops': [
       'error',
       {
-        'words': true,
-        'nonwords': false,
-        'overrides': {
-          'typeof': false
-        }
-      }
+        words: true,
+        nonwords: false,
+        overrides: {
+          typeof: false,
+        },
+      },
     ],
     'no-unreachable': ['error'],
     'no-global-assign': ['error'],
@@ -128,8 +127,8 @@ module.exports = {
     'no-constant-condition': [
       'error',
       {
-        'checkLoops': false
-      }
+        checkLoops: false,
+      },
     ],
     'no-console': ['off'],
     'no-useless-concat': ['error'],
@@ -138,8 +137,8 @@ module.exports = {
     'no-use-before-define': [
       'error',
       {
-        'functions': false
-      }
+        functions: false,
+      },
     ],
     'arrow-parens': ['error', 'as-needed'],
     'arrow-body-style': ['error', 'as-needed'],
@@ -147,8 +146,8 @@ module.exports = {
     'no-confusing-arrow': [
       'error',
       {
-        'allowParens': true
-      }
+        allowParens: true,
+      },
     ],
     'no-useless-computed-key': ['error'],
     'no-useless-rename': ['error'],
@@ -160,7 +159,6 @@ module.exports = {
     'prefer-rest-params': ['error'],
     'prefer-spread': ['error'],
     'rest-spread-spacing': ['error', 'never'],
-    'template-curly-spacing': ['error', 'never']
-  }
-
+    'template-curly-spacing': ['error', 'never'],
+  },
 };

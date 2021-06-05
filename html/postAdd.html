@@ -1,212 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Добавление поста</title>
     <link rel="stylesheet" href="../css/style.css" />
-</head>
+  </head>
 
-<body class="light-theme">
+  <body class="light-theme">
     <header class="header">
-        <button class="btnTheme">Dark</button>
-        <div class="container">
-            <div class="header_inner">
-                <div class="header_inner_rigth">
-                    <div class="header_item "><a href="../index.html">
-                    BistroBox</a></div>
-                    <div class="header_item"><a href="#">
-                    Каталог</a></div>
-                    <div class="headerButton">
-                        <button>
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
-                             <rect id="dgIconAc" x="23.5" y="22" width="2.00218" height="10" transform="rotate(-43.945 26 23.3895)" />
-                                <circle id="bgIcon" cx="20.5" cy="19.5" r="5.5"  stroke-width="2"/>
-                                <circle id="bgIcon" cx="20.5" cy="19.5" r="4.5" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="header_item"><a href="/html/postAdd.html">
-                        Добавить обьявление</a>
-                    </div>
-                </div>
-                <div class="header_inner_left">
-                    <div class="header_item"><a href="#">
-                        Лайк</a></div>
-                    <div class="header_item"><a href="#">
-                        Сообщения</a></div>
-                    <div class="headerButton">
-                        <button>
-                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
-                                <path id='bgIcon' d="M13 13L15.08 13.36L16.043 24.833C16.12 25.77 16.903 26.489 17.843 26.486H28.752C29.649 26.488 30.41 25.828 30.537 24.94L31.486 18.382C31.592 17.649 31.083 16.969 30.351 16.863C30.287 16.854 15.414 16.849 15.414 16.849"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle id="dgIconAc" cx="19.5" cy="29.5" r="1.5" />
-                                <circle id="dgIconAc" cx="27.5" cy="29.5" r="1.5" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="headerButton">
-                        <button data-modal>
-                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path id='bgIcon' d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z" />
-                                <path id='dgIconAc' fill-rule="evenodd" clip-rule="evenodd" d="M17.5362 18.6522C17.5362 21.0294 19.5349 22.9565 22 22.9565C24.4651 22.9565 26.4638 21.0294 26.4638 18.6522C26.4638 16.275 24.4651 14.3478 22 14.3478C19.5349 14.3478 17.5362 16.275 17.5362 18.6522ZM19.7681 18.6522C19.7681 19.8408 20.7669 20.8043 22 20.8043C23.2331 20.8043 24.2319 19.8408 24.2319 18.6522C24.2319 17.4635 23.2331 16.5 22 16.5C20.7669 16.5 19.7681 17.4635 19.7681 18.6522Z" />
-                                <path id='dgIconAc' fill-rule="evenodd" clip-rule="evenodd" d="M22 9.88405C28.6913 9.88405 34.116 15.3086 34.116 22C34.116 28.6914 28.6913 34.1159 22 34.1159C15.3087 34.1159 9.88409 28.6914 9.88409 22C9.88409 15.3086 15.3087 9.88405 22 9.88405ZM31.9131 22C31.9131 24.3022 31.1277 26.4212 29.8115 28.1039C28.0007 25.7327 25.1435 24.2029 21.9295 24.2029C18.7562 24.2029 15.9321 25.6933 14.1181 28.012C12.8437 26.3444 12.087 24.2606 12.087 22C12.087 16.5251 16.5247 12.0869 22 12.0869C27.4753 12.0869 31.9131 16.5251 31.9131 22ZM22 31.913C24.3682 31.913 26.5424 31.0824 28.2475 29.6967C26.853 27.7068 24.5433 26.4058 21.9295 26.4058C19.3477 26.4058 17.0622 27.6748 15.6623 29.623C17.3805 31.0529 19.5901 31.913 22 31.913Z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+      <button class="btnTheme">Dark</button>
+      <div class="container">
+        <div class="header_inner">
+          <div class="header_inner_rigth">
+            <div class="header_item">
+              <a href="../index.html"> BistroBox</a>
             </div>
+            <div class="header_item"><a href="#"> Каталог</a></div>
+            <div class="headerButton">
+              <button>
+                <svg
+                  width="44"
+                  height="44"
+                  viewBox="0 0 44 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="bgIcon"
+                    d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z"
+                  />
+                  <rect
+                    id="dgIconAc"
+                    x="23.5"
+                    y="22"
+                    width="2.00218"
+                    height="10"
+                    transform="rotate(-43.945 26 23.3895)"
+                  />
+                  <circle
+                    id="bgIcon"
+                    cx="20.5"
+                    cy="19.5"
+                    r="5.5"
+                    stroke-width="2"
+                  />
+                  <circle id="bgIcon" cx="20.5" cy="19.5" r="4.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="header_item">
+              <a href="/html/postAdd.html"> Добавить обьявление</a>
+            </div>
+          </div>
+          <div class="header_inner_left">
+            <div class="header_item"><a href="#"> Лайк</a></div>
+            <div class="header_item"><a href="#"> Сообщения</a></div>
+            <div class="headerButton">
+              <button>
+                <svg
+                  width="44"
+                  height="44"
+                  viewBox="0 0 44 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="bgIcon"
+                    d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z"
+                  />
+                  <path
+                    id="bgIcon"
+                    d="M13 13L15.08 13.36L16.043 24.833C16.12 25.77 16.903 26.489 17.843 26.486H28.752C29.649 26.488 30.41 25.828 30.537 24.94L31.486 18.382C31.592 17.649 31.083 16.969 30.351 16.863C30.287 16.854 15.414 16.849 15.414 16.849"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle id="dgIconAc" cx="19.5" cy="29.5" r="1.5" />
+                  <circle id="dgIconAc" cx="27.5" cy="29.5" r="1.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="headerButton">
+              <button data-modal>
+                <svg
+                  width="44"
+                  height="44"
+                  viewBox="0 0 44 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="bgIcon"
+                    d="M17.6 0.5H26.4C35.8441 0.5 43.5 8.15593 43.5 17.6V26.4C43.5 35.8441 35.8441 43.5 26.4 43.5H17.6C8.15593 43.5 0.5 35.8441 0.5 26.4V17.6C0.5 8.15593 8.15593 0.5 17.6 0.5Z"
+                  />
+                  <path
+                    id="dgIconAc"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.5362 18.6522C17.5362 21.0294 19.5349 22.9565 22 22.9565C24.4651 22.9565 26.4638 21.0294 26.4638 18.6522C26.4638 16.275 24.4651 14.3478 22 14.3478C19.5349 14.3478 17.5362 16.275 17.5362 18.6522ZM19.7681 18.6522C19.7681 19.8408 20.7669 20.8043 22 20.8043C23.2331 20.8043 24.2319 19.8408 24.2319 18.6522C24.2319 17.4635 23.2331 16.5 22 16.5C20.7669 16.5 19.7681 17.4635 19.7681 18.6522Z"
+                  />
+                  <path
+                    id="dgIconAc"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22 9.88405C28.6913 9.88405 34.116 15.3086 34.116 22C34.116 28.6914 28.6913 34.1159 22 34.1159C15.3087 34.1159 9.88409 28.6914 9.88409 22C9.88409 15.3086 15.3087 9.88405 22 9.88405ZM31.9131 22C31.9131 24.3022 31.1277 26.4212 29.8115 28.1039C28.0007 25.7327 25.1435 24.2029 21.9295 24.2029C18.7562 24.2029 15.9321 25.6933 14.1181 28.012C12.8437 26.3444 12.087 24.2606 12.087 22C12.087 16.5251 16.5247 12.0869 22 12.0869C27.4753 12.0869 31.9131 16.5251 31.9131 22ZM22 31.913C24.3682 31.913 26.5424 31.0824 28.2475 29.6967C26.853 27.7068 24.5433 26.4058 21.9295 26.4058C19.3477 26.4058 17.0622 27.6748 15.6623 29.623C17.3805 31.0529 19.5901 31.913 22 31.913Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
-    <hr>
+    <hr />
 
     <div class="post_add container_post_add">
-        <div class="container">
-            <div class="post_add">
-                <h2 class="title_post_add">Создание объявления</h2>
-                <div class="short_description content_block">
-                    <h3 class="text_h3_post_add">Опишите в подробностях</h3>
-                    <input class="input_post_add input_poduct_name" id="my-input" type="text" placeholder="Укажите название">
-                    <div id="my-input-remaining-chars">0/70</div>
-                    <h3 class="text_h3_post_add">Цена:</h3>
-                    <input class="input_post_add input_poduct_price" id="my-input" type="text" onkeypress="isInputNumber(event)" placeholder="Укажите цену в грн">
+      <div class="container">
+        <div class="post_add">
+          <h2 class="title_post_add">Создание объявления</h2>
+          <div class="short_description content_block">
+            <h3 class="text_h3_post_add">Опишите в подробностях</h3>
+            <input
+              class="input_post_add input_poduct_name"
+              id="my-input"
+              type="text"
+              placeholder="Укажите название"
+            />
+            <div id="my-input-remaining-chars">0/70</div>
+            <h3 class="text_h3_post_add">Цена:</h3>
+            <input
+              class="input_post_add input_poduct_price"
+              id="my-input"
+              type="text"
+              onkeypress="isInputNumber(event)"
+              placeholder="Укажите цену в грн"
+            />
 
-                    <h3 class="text_h3_post_add">Категория</h3>
-                    <div class="select-box">
-                        <div class="options-container">
-                            <div class="option">
-                                <input type="radio" class="radio" id="kids" name="category" />
-                                <label for="kids">Детские товары</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="privacy" name="category" />
-                                <label for="privacy">Недвижимость</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="vehicles" name="category" />
-                                <label for="vehicles">Транспорт</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="animals" name="category" />
-                                <label for="animals">Животные</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="job" name="category" />
-                                <label for="job">Работа</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="details" name="category" />
-                                <label for="details">Запчасти для транспорта</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="house" name="category" />
-                                <label for="house">Дом и сад</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="electricity" name="category" />
-                                <label for="electricity">Электроника</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="bussines" name="category" />
-                                <label for="bussines">Бизнес и услуги</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="fashion" name="category" />
-                                <label for="fashion">Мода и стиль</label>
-                            </div>
-
-                            <div class="option">
-                                <input type="radio" class="radio" id="sport" name="category" />
-                                <label for="sport">Спорт и отдых</label>
-                            </div>
-
-                        </div>
-                        <div class="selected">
-                            Выберите категорию
-                        </div>
-                        <div class="search-box">
-                            <input class="input_product_catalog" type="text" placeholder="Введите название категории..." />
-                        </div>
-                    </div>
+            <h3 class="text_h3_post_add">Категория</h3>
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="radio" id="kids" name="category" />
+                  <label for="kids">Детские товары</label>
                 </div>
-            </div>
-            <div class="content_block">
-                <h3 class="text_h3_post_add">Фотографии</h3>
-                <h4 class="text_h4_post_add">Объявления с фото получают в среднем в 3-5 раз больше откликов</h4>
-                <div class="contant_photo_add">
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="privacy"
+                    name="category"
+                  />
+                  <label for="privacy">Недвижимость</label>
                 </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="vehicles"
+                    name="category"
+                  />
+                  <label for="vehicles">Транспорт</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="animals"
+                    name="category"
+                  />
+                  <label for="animals">Животные</label>
+                </div>
+
+                <div class="option">
+                  <input type="radio" class="radio" id="job" name="category" />
+                  <label for="job">Работа</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="details"
+                    name="category"
+                  />
+                  <label for="details">Запчасти для транспорта</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="house"
+                    name="category"
+                  />
+                  <label for="house">Дом и сад</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="electricity"
+                    name="category"
+                  />
+                  <label for="electricity">Электроника</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="bussines"
+                    name="category"
+                  />
+                  <label for="bussines">Бизнес и услуги</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="fashion"
+                    name="category"
+                  />
+                  <label for="fashion">Мода и стиль</label>
+                </div>
+
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="sport"
+                    name="category"
+                  />
+                  <label for="sport">Спорт и отдых</label>
+                </div>
+              </div>
+              <div class="selected">Выберите категорию</div>
+              <div class="search-box">
+                <input
+                  class="input_product_catalog"
+                  type="text"
+                  placeholder="Введите название категории..."
+                />
+              </div>
             </div>
-            <div class="product_description content_block">
-                <h3 class="text_h3_post_add">Описание</h3>
-                <textarea id="my-textarea" class="input_post_add input_product_description" placeholder="Опишите свой товар"></textarea>
-                <div id="my-textarea-remaining-chars">0/500</div>
-            </div>
-            <div class="contact_information content_block">
-                <h3 class="text_h3_post_add">Контактная информация</h3>
-                <h4 class="text_h4_post_add">Местоположение</h4>
-                <input class="input_post_add input_name_city" type="text" placeholder="Название города">
-                <h4 class="text_h4_post_add">Контактное лицо</h4>
-                <input class="input_post_add input_name_account" type="email" placeholder="Имя вашего аккаунта">
-                <h4 class="text_h4_post_add">Email-адресс</h4>
-                <input class="input_post_add input_email" type="text" placeholder="Ваш email-адресс">
-                <h4 class="text_h4_post_add">Номер телефона</h4>
-                <input class="input_post_add input_phone" type="text" placeholder="Номер телефона">
-            </div>
-            <a id="submit" href="#">
-                <button id="publish_post">Опубликовать</button>
-            </a>
+          </div>
         </div>
+        <div class="content_block">
+          <h3 class="text_h3_post_add">Фотографии</h3>
+          <h4 class="text_h4_post_add">
+            Объявления с фото получают в среднем в 3-5 раз больше откликов
+          </h4>
+          <div class="contant_photo_add"></div>
+        </div>
+        <div class="product_description content_block">
+          <h3 class="text_h3_post_add">Описание</h3>
+          <textarea
+            id="my-textarea"
+            class="input_post_add input_product_description"
+            placeholder="Опишите свой товар"
+          ></textarea>
+          <div id="my-textarea-remaining-chars">0/500</div>
+        </div>
+        <div class="contact_information content_block">
+          <h3 class="text_h3_post_add">Контактная информация</h3>
+          <h4 class="text_h4_post_add">Местоположение</h4>
+          <input
+            class="input_post_add input_name_city"
+            type="text"
+            placeholder="Название города"
+          />
+          <h4 class="text_h4_post_add">Контактное лицо</h4>
+          <input
+            class="input_post_add input_name_account"
+            type="email"
+            placeholder="Имя вашего аккаунта"
+          />
+          <h4 class="text_h4_post_add">Email-адресс</h4>
+          <input
+            class="input_post_add input_email"
+            type="text"
+            placeholder="Ваш email-адресс"
+          />
+          <h4 class="text_h4_post_add">Номер телефона</h4>
+          <input
+            class="input_post_add input_phone"
+            type="text"
+            placeholder="Номер телефона"
+          />
+        </div>
+        <a id="submit" href="#">
+          <button id="publish_post">Опубликовать</button>
+        </a>
+      </div>
     </div>
 
     <div class="modal">
-        <div class="modal__dialog">
-            <div class="modal__content">
-                <div class="login-box">
-                    <form action="">
-                        <div data-close class="modalClose">&times;</div>
-                        <h1>Войти</h1>
-                        <div class="textbox">
-                            <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Имя пользователя">
-                        </div>
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <div class="login-box">
+            <form action="">
+              <div data-close class="modalClose">&times;</div>
+              <h1>Войти</h1>
+              <div class="textbox">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Имя пользователя" />
+              </div>
 
-                        <div class="textbox">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Пароль">
-                        </div>
+              <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Пароль" />
+              </div>
 
-                        <input type="button" class="btnSin" value="Войти">
-
-                    </form>
-
-                </div>
-                <hr>
-                <div class="log_icones">
-                    Войти с помощью:
-                    <button>
-                        <img src="../png/google_iconP.png" alt="Google" width="50" height="50">
-                    </button>
-                    <button>
-                        <img src="../png/github_iconP.png" alt="GitHub" width="50" height="50">
-                    </button>
-                </div>
-
-            </div>
+              <input type="button" class="btnSin" value="Войти" />
+            </form>
+          </div>
+          <hr />
+          <div class="log_icones">
+            Войти с помощью:
+            <button>
+              <img
+                src="../png/google_iconP.png"
+                alt="Google"
+                width="50"
+                height="50"
+              />
+            </button>
+            <button>
+              <img
+                src="../png/github_iconP.png"
+                alt="GitHub"
+                width="50"
+                height="50"
+              />
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="../js/infoPostAdd.js"></script>
     <script src="../js/btnTheme.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
-</body>
-
+  </body>
 </html>

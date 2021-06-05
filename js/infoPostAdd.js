@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     searchTerm = searchTerm.toLowerCase();
     optionsList.forEach(option => {
       const label =
-                option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-      label.indexOf(searchTerm) !== -1 ?
-        (option.style.display = 'block') :
-        (option.style.display = 'none');
+        option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+      label.indexOf(searchTerm) !== -1
+        ? (option.style.display = 'block')
+        : (option.style.display = 'none');
     });
   };
 
@@ -94,8 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
   printBlockPhoto();
 
   let dropPhotoAdd = document.querySelectorAll('.add_photos');
-  const btnAddPhotos = dropPhotoAdd[countClick].querySelectorAll('.btn_add_photos');
-  const fileInput = dropPhotoAdd[countClick].querySelector('.file_input_photos');
+  const btnAddPhotos =
+    dropPhotoAdd[countClick].querySelectorAll('.btn_add_photos');
+  const fileInput =
+    dropPhotoAdd[countClick].querySelector('.file_input_photos');
 
   btnAddPhotos.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -108,17 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  fileInput.addEventListener('change', function() {
+  fileInput.addEventListener('change', function () {
     filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
     showFile();
   });
 
-
   function showFile() {
     const fileType = filePhotos.type; //получение выбранного типа файла
     const validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
-    if (validExtensions.includes(fileType)) { //Если файл изображение
+    if (validExtensions.includes(fileType)) {
+      //Если файл изображение
       const fileReader = new FileReader(); //созаём новый FileReader
       fileReader.onload = () => {
         const fileURL = fileReader.result; //передача источника файла пользователя в fileURL
@@ -130,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       alert('Это не изображение!');
     }
-
   }
 
   //.................Добавление поста....................
@@ -159,11 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (flag) {
       postInfo.productName = document.querySelector('.input_poduct_name').value;
-      postInfo.productPrice = document.querySelector('.input_poduct_price').value;
-      postInfo.productDescription = document.querySelector('.input_product_description').value;
-      postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
+      postInfo.productPrice = document.querySelector(
+        '.input_poduct_price'
+      ).value;
+      postInfo.productDescription = document.querySelector(
+        '.input_product_description'
+      ).value;
+      postInfo.productCatalog = document.querySelector(
+        '.input_product_catalog'
+      ).value;
       postInfo.nameCity = document.querySelector('.input_name_city').value;
-      postInfo.nameAccount = document.querySelector('.input_name_account').value;
+      postInfo.nameAccount = document.querySelector(
+        '.input_name_account'
+      ).value;
       postInfo.nameEmail = document.querySelector('.input_email').value;
       postInfo.namePhone = document.querySelector('.input_phone').value;
       postInfo.photoPost = array;

@@ -491,7 +491,7 @@ input[type=password]:focus {
   margin: 10px 20px;
   border-radius: 10px;
   box-shadow: 0 0 45px 45px var(--black_ligth) inset, 0 0 0 0 var(--black_ligth);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   letter-spacing: 1.5px;
   color: var(--while_light);
@@ -614,8 +614,8 @@ input[type=password]:focus {
 }
 
 .selected::after {
-  content: "";
-  background: url("/svg/arrow-down.svg");
+  content: '';
+  background: url('/svg/arrow-down.svg');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -672,7 +672,7 @@ input[type=password]:focus {
 .search-box input {
   width: 100%;
   padding: 12px 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   position: absolute;
   border-radius: 8px 8px 0 0;
@@ -726,7 +726,7 @@ input[type=password]:focus {
   margin: 10px 20px;
   border-radius: 10px;
   box-shadow: 0 0 45px 45px var(--black_ligth) inset, 0 0 0 0 var(--black_ligth);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   letter-spacing: 1.5px;
   color: var(--while_light);
