@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             label.indexOf(searchTerm) !== -1 ?
                 (option.style.display = 'block') :
                 (option.style.display = 'none');
-        };
+        }
     };
 
     selected.addEventListener('click', () => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             selected.innerHTML = oplis.querySelector('label').innerHTML;
             optionsContainer.classList.remove('active');
         });
-    };
+    }
 
     searchBox.addEventListener('keyup', e => {
         filterList(e.target.value);
@@ -137,43 +137,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //.................Добавление поста....................
 
-    const btnPublickPost = document.getElementById('publish_post');
-
     function inputText() {
-        const posts = localStorage.getItem('posts');
-        const postInfo = {
-            postId: 0,
-            productLike: 228,
-        };
-
         let flag = true;
         const field = document.querySelectorAll('.input_post_add');
         for (const item of field) {
             if (item.value) {
                 document.getElementById('submit').href = '../index.html';
                 flag = true;
-                return flag;
+                return gettingInfo(flag);
             }
             item.style.borderColor = 'red';
             flag = false;
-            return flag;
+            return gettingInfo(flag);
         }
+    }
+
+
+    function gettingInfo(flag) {
+        const posts = localStorage.getItem('posts');
+        const postInfo = {
+            postId: 0,
+            productLike: 228,
+        };
 
         if (flag) {
             postInfo.productName = document.querySelector('.input_poduct_name').value;
-            postInfo.productPrice = document.querySelector(
-                '.input_poduct_price'
-            ).value;
-            postInfo.productDescription = document.querySelector(
-                '.input_product_description'
-            ).value;
-            postInfo.productCatalog = document.querySelector(
-                '.input_product_catalog'
-            ).value;
+            postInfo.productPrice = document.querySelector('.input_poduct_price').value;
+            postInfo.productDescription = document.querySelector('.input_product_description').value;
+            postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
             postInfo.nameCity = document.querySelector('.input_name_city').value;
-            postInfo.nameAccount = document.querySelector(
-                '.input_name_account'
-            ).value;
+            postInfo.nameAccount = document.querySelector('.input_name_account').value;
             postInfo.nameEmail = document.querySelector('.input_email').value;
             postInfo.namePhone = document.querySelector('.input_phone').value;
             postInfo.photoPost = array;
@@ -189,5 +182,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    btnPublickPost.addEventListener('click', inputText);
+    document.getElementById('publish_post').addEventListener('click', inputText);
 });
