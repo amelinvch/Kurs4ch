@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
     <title>BistroBox</title>
-    <!-- <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="586420414412-b5vdrvlak7sca8oh1s0tdivb9sl8uhto.apps.googleusercontent.com"> -->
-    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
-  </head>
+</head>
 
-  <body class="light-theme">
+<body class="light-theme">
     <header class="header">
-      <button class="btnTheme">Dark</button>
-      <div class="container">
-        <div class="header_inner">
-          <div class="header_inner_rigth">
-            <div class="header_item"><a href="index.html"> BistroBox</a></div>
-            <div class="header_item"><a href="#"> Каталог</a></div>
-            <div class="headerButton">
-              <button>
+        <button class="btnTheme">Dark</button>
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_inner_rigth">
+                    <div class="header_item"><a href="index.html"> BistroBox</a></div>
+                    <div class="header_item"><a href="#"> Каталог</a></div>
+                    <div class="headerButton">
+                        <button>
                 <svg
                   width="44"
                   height="44"
@@ -48,18 +46,18 @@
                   <circle id="bgIcon" cx="20.5" cy="19.5" r="4.5" />
                 </svg>
               </button>
-            </div>
-            <div class="header_item">
-              <a href="html/postAdd.html"> Добавить обьявление</a>
-            </div>
-          </div>
-          <div class="header_inner_left">
-            <div class="header_item">
-              <a href="html/like-page.html"> Лайк</a>
-            </div>
-            <div class="header_item"><a href="#"> Сообщения</a></div>
-            <div class="headerButton">
-              <button>
+                    </div>
+                    <div class="header_item">
+                        <a href="html/postAdd.html"> Добавить обьявление</a>
+                    </div>
+                </div>
+                <div class="header_inner_left">
+                    <div class="header_item">
+                        <a href="html/like-page.html"> Лайк</a>
+                    </div>
+                    <div class="header_item"><a href="#"> Сообщения</a></div>
+                    <div class="headerButton">
+                        <button>
                 <svg
                   width="44"
                   height="44"
@@ -82,9 +80,9 @@
                   <circle id="dgIconAc" cx="27.5" cy="29.5" r="1.5" />
                 </svg>
               </button>
-            </div>
-            <div class="headerButton">
-              <button data-modal>
+                    </div>
+                    <div class="headerButton">
+                        <button data-modal>
                 <svg
                   width="44"
                   height="44"
@@ -110,49 +108,41 @@
                   />
                 </svg>
               </button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </header>
     <hr />
 
     <div class="catalog">
-      <div class="container">
-        <div class="catalog_example_ad"></div>
-      </div>
+        <div class="container">
+            <div class="catalog_example_ad"></div>
+        </div>
     </div>
 
     <div class="modal">
-      <div class="modal__dialog">
-        <div class="modal__content">
-          <div class="login-box">
-            <form action="">
-              <div data-close class="modalClose">&times;</div>
-              <h1>Войти</h1>
-              <div class="textbox">
-                <!-- <i class="fas fa-user"></i> -->
-                <input
-                  class="user_name"
-                  type="text"
-                  placeholder="Имя пользователя"
-                />
-              </div>
-              <div class="textbox">
-                <!-- <i class="fas fa-lock"></i> -->
-                <input
-                  class="user_password"
-                  type="password"
-                  placeholder="Пароль"
-                />
-              </div>
-              <button type="button" class="btnSin">Войти</button>
-            </form>
-          </div>
-          <hr />
-          <div class="log_icones">
-            Войти с помощью:
-            <button>
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <div class="login-box">
+                    <form action="">
+                        <div data-close class="modalClose">&times;</div>
+                        <h1>Войти</h1>
+                        <div class="textbox">
+                            <!-- <i class="fas fa-user"></i> -->
+                            <input class="user_name" type="text" placeholder="Имя пользователя" />
+                        </div>
+                        <div class="textbox">
+                            <!-- <i class="fas fa-lock"></i> -->
+                            <input class="user_password" type="password" placeholder="Пароль" />
+                        </div>
+                        <button type="button" class="btnSin">Войти</button>
+                    </form>
+                </div>
+                <hr />
+                <div class="log_icones">
+                    Войти с помощью:
+                    <button>
               <img
                 src="png/google_iconP.png"
                 alt="Google"
@@ -160,7 +150,7 @@
                 height="50"
               />
             </button>
-            <button>
+                    <button>
               <img
                 src="png/github_iconP.png"
                 alt="GitHub"
@@ -168,9 +158,9 @@
                 height="50"
               />
             </button>
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <script type="text/javascript" src="js/addPosts.js"></script>
@@ -181,5 +171,6 @@
     <script type="text/javascript" src="js/btnDeletePost.js"></script>
 
     <noscript>You need to enable JavaScript to view the full site.</noscript>
-  </body>
+</body>
+
 </html>
