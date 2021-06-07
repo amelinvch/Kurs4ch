@@ -1,32 +1,31 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  //................Добавленеи поста................
-  const posts = JSON.parse(localStorage.getItem('posts'));
-  const like = document.cookie.split('[')[1].split(']')[0].split(',');
-  const container = document.querySelector('.catalog_example_ad');
+    //................Добавленеи поста................
+    const posts = JSON.parse(localStorage.getItem('posts'));
+    const like = document.cookie.split('[')[1].split(']')[0].split(',');
+    const container = document.querySelector('.catalog_example_ad');
 
-  for (const post of posts) {
-    const newPost = addNameClass('work');
+    for (const post of posts) {
+        const newPost = addNameClass('work');
 
-    const photos = addNameClass('photos');
-    photos.innerHTML = post.photoPost[0];
+        const photos = addNameClass('photos');
+        photos.innerHTML = post.photoPost[0];
 
-    const workContent = addNameClass('work_content');
+        const workContent = addNameClass('work_content');
 
-    const workCategory = addNameClass('work_category');
-    workCategory.innerText = `Категория: ${post.productCatalog}`;
+        const workCategory = addNameClass('work_category');
+        workCategory.innerText = `Категория: ${post.productCatalog}`;
 
-    const workTitle = addNameClass('work_title');
-    workTitle.append(post.productName);
+        const workTitle = addNameClass('work_title');
+        workTitle.append(post.productName);
 
-    const workPrice = addNameClass('work_price');
-    workPrice.innerText = `Цена: ${post.productPrice} грн`;
+        const workPrice = addNameClass('work_price');
+        workPrice.innerText = `Цена: ${post.productPrice} грн`;
 
-    const workButtonLike = document.createElement('div');
-    workClass(workButtonLike, post);
-
-    workButtonLike.innerHTML = `
+        const workButtonLike = document.createElement('div');
+        workClass(workButtonLike, post);
+        workButtonLike.innerHTML = `
             <button class="btn-like">
               <img src="svg/btnLike.svg"/>
             </button>
@@ -35,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="like_btn_counter">${post.productLike}</span>
             </div>`;
 
-    const workButtonMore = addNameClass('work_btn_price');
-    workButtonMore.innerHTML = `
+        const workButtonMore = addNameClass('work_btn_price');
+        workButtonMore.innerHTML = `
             <button class="#">
                 <div class="work_counter_like">
                     <a class="more-information" href="../html/advertisement.html?id=${post.postId}">Подробнее</a>
@@ -44,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         `;
 
-    const workBinBtn = addNameClass('work_btn_delete');
-    workBinBtn.innerHTML = `
+        const workBinBtn = addNameClass('work_btn_delete');
+        workBinBtn.innerHTML = `
             <button>
                 <svg height="45px" width="45px" viewBox="0 0 90 90"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -58,39 +57,43 @@ document.addEventListener('DOMContentLoaded', () => {
            </button>
         `;
 
-    workTitle.append(workPrice);
+        workTitle.append(workPrice);
 
-    newPost.append(photos);
-    newPost.append(workContent);
+        newPost.append(photos);
+        newPost.append(workContent);
 
-    workContent.append(workCategory);
-    workContent.append(workTitle);
-    workContent.append(workButtonLike);
-    workContent.append(workButtonMore);
-    workButtonMore.append(workBinBtn);
+        workContent.append(workCategory);
+        workContent.append(workTitle);
+        workContent.append(workButtonLike);
+        workContent.append(workButtonMore);
+        workButtonMore.append(workBinBtn);
 
-    container.append(newPost);
-  }
-
-  function addNameClass(nameClass) {
-    const res = document.createElement('div');
-    res.className = `${nameClass}`;
-    return res;
-  }
-
-  function workClass(workButtonLike, post) {
-    if (like != '') {
-      for (let i = 0; i < like.length; i++) {
-        if (like[i] === post.postId) {
-          workButtonLike.className = 'work_btn_like work_btn_like2';
-          return workButtonLike;
-        } else {
-          workButtonLike.className = 'work_btn_like';
-        }
-      }
-    } else {
-      workButtonLike.className = 'work_btn_like';
-      return workButtonLike;
+        container.append(newPost);
     }
-  }
+
+    function addNameClass(nameClass) {
+        const res = document.createElement('div');
+        res.className = `${nameClass}`;
+        return res;
+    }
+
+    function workClass(workButtonLike, post) {
+        if (like != '') {
+            for (let i = 0; i < like.length; i++) {
+                if (+like[i] === post.postId) {
+                    workButtonLike.className = 'work_btn_like work_btn_like2';
+                    return workButtonLike;
+                } else {
+                    workButtonLike.className = 'work_btn_like';
+                }
+            }
+        } else {
+            workButtonLike.className = 'work_btn_like';
+        }
+    }
+} else {
+    workButtonLike.className = 'work_btn_like';
+    return workButtonLike;
+}
+}
 });
