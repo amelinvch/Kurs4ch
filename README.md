@@ -3,6 +3,6 @@
 Амелин Вячеслав tg: @berlin1776 
                 git: vchamelin
 
-Крутой Артём tg: @cmertenok 
+Крутиков Артём tg: @cmertenok 
              git: cmertenok
 
