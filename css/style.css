@@ -312,6 +312,14 @@ hr {
     display: none;
 }
 
+.hideImg img {
+    display: none;
+}
+
+.showImg img {
+    display: block;
+}
+
 
 /* .........Контент каталога........ */
 
@@ -322,7 +330,7 @@ hr {
 }
 
 .work {
-    height: 400px;
+    height: 414px;
     width: 300px;
     overflow: hidden;
     box-shadow: 0 0 4px var(--black_ligth);
@@ -335,23 +343,20 @@ hr {
 }
 
 .photos img {
-    width: 300px;
     height: 220px;
+    width: 300px;
+    flex-shrink: 0;
 }
 
 .hide-picture {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: 0.5s;
+    display: flex;
 }
 
-.right-button, 
+.right-button,
 .left-button {
-  cursor: pointer;
-  z-index: 99;
-  color: var(--black_ligth);
-  font-size: 35px;
+    z-index: 99;
+    color: var(--black_ligth);
+    font-size: 35px;
 }
 
 .swap-btn {
@@ -430,6 +435,7 @@ hr {
     padding: 10px;
     color: var(--black_ligth);
 }
+
 
 /*...............Добавлние поста...................*/
 
