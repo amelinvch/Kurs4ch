@@ -339,6 +339,26 @@ hr {
     height: 220px;
 }
 
+.hide-picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+.right-button, 
+.left-button {
+  cursor: pointer;
+  z-index: 99;
+  color: var(--black_ligth);
+  font-size: 35px;
+}
+
+.swap-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
 .work_content {
     padding: 1rem 0.8rem;
 }

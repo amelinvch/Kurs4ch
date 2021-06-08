@@ -1,31 +1,37 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    //................Добавленеи поста................
-    const posts = JSON.parse(localStorage.getItem('posts'));
-    const like = document.cookie.split('[')[1].split(']')[0].split(',');
-    const container = document.querySelector('.catalog_example_ad');
+  //................Добавленеи поста................
+  const posts = JSON.parse(localStorage.getItem('posts'));
+  const like = document.cookie.split('[')[1].split(']')[0].split(',');
+  const container = document.querySelector('.catalog_example_ad');
 
-    for (const post of posts) {
-        const newPost = addNameClass('work');
+  for (const post of posts) {
+    const newPost = addNameClass('work');
 
-        const photos = addNameClass('photos');
-        photos.innerHTML = post.photoPost[0];
+    const photos = addNameClass('photos hide-picture');
+    photos.innerHTML = post.photoPost;
 
-        const workContent = addNameClass('work_content');
+    const rightButton = addNameClass('right-button swap-btn');
+    rightButton.innerHTML = `<button>&lt</button>`;
 
-        const workCategory = addNameClass('work_category');
-        workCategory.innerText = `Категория: ${post.productCatalog}`;
+    const leftButton = addNameClass('left-button swap-btn');
+    leftButton.innerHTML = `<button>&gt</button>`;
 
-        const workTitle = addNameClass('work_title');
-        workTitle.append(post.productName);
+    const workContent = addNameClass('work_content');
 
-        const workPrice = addNameClass('work_price');
-        workPrice.innerText = `Цена: ${post.productPrice} грн`;
+    const workCategory = addNameClass('work_category');
+    workCategory.innerText = `Категория: ${post.productCatalog}`;
 
-        const workButtonLike = document.createElement('div');
-        workClass(workButtonLike, post);
-        workButtonLike.innerHTML = `
+    const workTitle = addNameClass('work_title');
+    workTitle.append(post.productName);
+
+    const workPrice = addNameClass('work_price');
+    workPrice.innerText = `Цена: ${post.productPrice} грн`;
+
+    const workButtonLike = document.createElement('div');
+    workClass(workButtonLike, post);
+    workButtonLike.innerHTML = `
             <button class="btn-like">
               <img src="svg/btnLike.svg"/>
             </button>
@@ -34,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="like_btn_counter">${post.productLike}</span>
             </div>`;
 
-        const workButtonMore = addNameClass('work_btn_price');
-        workButtonMore.innerHTML = `
+    const workButtonMore = addNameClass('work_btn_price');
+    workButtonMore.innerHTML = `
             <button class="#">
                 <div class="work_counter_like">
                     <a class="more-information" href="../html/advertisement.html?id=${post.postId}">Подробнее</a>
@@ -43,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         `;
 
-        const workBinBtn = addNameClass('work_btn_delete');
-        workBinBtn.innerHTML = `
+    const workBinBtn = addNameClass('work_btn_delete');
+    workBinBtn.innerHTML = `
             <button>
                 <svg height="45px" width="45px" viewBox="0 0 90 90"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -57,39 +63,66 @@ document.addEventListener('DOMContentLoaded', () => {
            </button>
         `;
 
-        workTitle.append(workPrice);
+    workTitle.append(workPrice);
 
-        newPost.append(photos);
-        newPost.append(workContent);
+    newPost.append(photos);
+    newPost.append(workContent);
+    rightButton.append(leftButton);
+    workContent.append(rightButton);
+    workContent.append(workCategory);
+    workContent.append(workTitle);
+    workContent.append(workButtonLike);
+    workContent.append(workButtonMore);
+    workButtonMore.append(workBinBtn);
 
-        workContent.append(workCategory);
-        workContent.append(workTitle);
-        workContent.append(workButtonLike);
-        workContent.append(workButtonMore);
-        workButtonMore.append(workBinBtn);
+    container.append(newPost);
+  }
 
-        container.append(newPost);
-    }
+  function addNameClass(nameClass) {
+    const res = document.createElement('div');
+    res.className = `${nameClass}`;
+    return res;
+  }
 
-    function addNameClass(nameClass) {
-        const res = document.createElement('div');
-        res.className = `${nameClass}`;
-        return res;
-    }
-
-    function workClass(workButtonLike, post) {
-        if (like != '') {
-            for (let i = 0; i < like.length; i++) {
-                if (+like[i] === post.postId) {
-                    workButtonLike.className = 'work_btn_like work_btn_like2';
-                    return workButtonLike;
-                } else {
-                    workButtonLike.className = 'work_btn_like';
-                }
-            }
+  function workClass(workButtonLike, post) {
+    if (like != '') {
+      for (let i = 0; i < like.length; i++) {
+        if (+like[i] === post.postId) {
+          workButtonLike.className = 'work_btn_like work_btn_like2';
+          return workButtonLike;
         } else {
-            workButtonLike.className = 'work_btn_like';
-            return workButtonLike;
+          workButtonLike.className = 'work_btn_like';
         }
+      }
+    } else {
+      workButtonLike.className = 'work_btn_like';
+      return workButtonLike;
     }
+  }
+
+  let index = 1;
+
+  function showPictures(slideNumber) {
+    if (slideNumber < 1) {
+      index = post.photoPost.length;
+    } else if (slideNumber > post.photoPost.length) {
+      index = 0;
+    }
+    for (let i = 0; i < post.photoPost.length; i++) {
+      post.photoPost[i].style.display = 'none';
+    }
+    post.photoPost[index - 1].style.display = 'block';
+  }
+
+  function slideSwitch(slideNumber) {
+    showPictures(index += slideNumber);
+  }
+
+  leftButton.addEventListener('click', () => {
+    slideSwitch(-1);
+  });
+
+  rightButton.addEventListener('click', () => {
+    slideSwitch(1);
+  });
 });
