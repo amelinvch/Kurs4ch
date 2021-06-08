@@ -89,11 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             workButtonLike.className = 'work_btn_like';
+            return workButtonLike;
         }
     }
-} else {
-    workButtonLike.className = 'work_btn_like';
-    return workButtonLike;
-}
-}
 });

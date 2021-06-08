@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-
     const btnLike = document.querySelectorAll('.work_btn_like');
     const user = document.cookie.split('[')[1].split(']')[0];
 
@@ -38,29 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
         counBtnLike.textContent--;
         for (let j = 0; j < like.length; j++) {
             if (i === like[j]) {
-                return like.splice(i, 1);
+                return like.splice(j, 1);
             }
         }
     }
-});
-}
 
-function spliceArr(counBtnLike, like, i) {
-    counBtnLike.textContent--;
-    for (let j = 0; j < like.length; j++) {
-        if (i === like[j]) {
-            return like.splice(j, 1);
-        }
+    function sliceArr(counBtnLike, like, i) {
+        counBtnLike.textContent++;
+        const insert = (arr, index, newItem) => [
+            ...arr.slice(0, index),
+            newItem,
+            ...arr.slice(index),
+        ];
+        return insert(like, i, i);
     }
-}
-
-function sliceArr(counBtnLike, like, i) {
-    counBtnLike.textContent++;
-    const insert = (arr, index, newItem) => [
-        ...arr.slice(0, index),
-        newItem,
-        ...arr.slice(index),
-    ];
-    return insert(like, i, i);
-}
 });
