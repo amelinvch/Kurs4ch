@@ -1,3 +1,5 @@
+'use strict';
+
 function user() {
   const userInfo = {
     userId: 0,

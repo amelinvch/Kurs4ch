@@ -136,11 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //.................Добавление поста....................
 
+  const nameAccount = document.querySelector('.input_name_account').value;
+  const nameEmail = document.querySelector('.input_email').value;
+  const namePhone = document.querySelector('.input_phone').value;
+
+  const namePattern = /\w \w \w/;
+  const numberPattern = /[0-9]/;
+  const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+
+  function validForm(name, rx) {
+    return rx.test(name);
+  }
+
   function inputText() {
     let flag = true;
     const field = document.querySelectorAll('.input_post_add');
     for (const item of field) {
-      if (item.value) {
+      if (item.value && validForm(nameAccount, namePattern) && validForm(nameEmail, numberPattern) && validForm(namePhone, emailPattern)) {
         document.getElementById('submit').href = '../index.html';
         flag = true;
         return gettingInfo(flag);
@@ -150,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return gettingInfo(flag);
     }
   }
-
 
   function gettingInfo(flag) {
     const posts = localStorage.getItem('posts');
@@ -165,9 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
       postInfo.productDescription = document.querySelector('.input_product_description').value;
       postInfo.productCatalog = document.querySelector('.input_product_catalog').value;
       postInfo.nameCity = document.querySelector('.input_name_city').value;
-      postInfo.nameAccount = document.querySelector('.input_name_account').value;
-      postInfo.nameEmail = document.querySelector('.input_email').value;
-      postInfo.namePhone = document.querySelector('.input_phone').value;
+      postInfo.nameAccount = nameAccount;
+      postInfo.nameEmail = nameEmail;
+      postInfo.namePhone = namePhone;
       postInfo.photoPost = array;
 
       if (posts) {

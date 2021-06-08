@@ -99,30 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
       return workButtonLike;
     }
   }
-
-  let index = 1;
-
-  function showPictures(slideNumber) {
-    if (slideNumber < 1) {
-      index = post.photoPost.length;
-    } else if (slideNumber > post.photoPost.length) {
-      index = 0;
-    }
-    for (let i = 0; i < post.photoPost.length; i++) {
-      post.photoPost[i].style.display = 'none';
-    }
-    post.photoPost[index - 1].style.display = 'block';
-  }
-
-  function slideSwitch(slideNumber) {
-    showPictures(index += slideNumber);
-  }
-
-  leftButton.addEventListener('click', () => {
-    slideSwitch(-1);
-  });
-
-  rightButton.addEventListener('click', () => {
-    slideSwitch(1);
-  });
 });
