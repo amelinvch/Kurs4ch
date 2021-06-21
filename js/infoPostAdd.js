@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    /*Category window*/
 
     const selected = document.querySelector('.selected');
     const optionsContainer = document.querySelector('.options-container');
@@ -13,9 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const option of optionsList) {
             const label =
                 option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-            label.indexOf(searchTerm) !== -1 ?
-                (option.style.display = 'block') :
-                (option.style.display = 'none');
+            option.style.display = label.includes(searchTerm) ? 'none' : 'block';
         }
     };
 
@@ -70,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //.........................Добавление фото..............
 
     const popa = document.querySelector('.contant_photo_add');
-    let filePhotos;
     let countClick = 0;
     const maxAddPhoto = 5;
     const array = [];
@@ -113,11 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     fileInput.addEventListener('change', function() {
-        filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
-        showFile();
+        const filePhotos = this.files[0]; //если выбрали несколько файлов, то берём первый
+        showFile(filePhotos);
     });
 
-    function showFile() {
+    function showFile(filePhotos) {
         const fileType = filePhotos.type; //получение выбранного типа файла
         const validExtensions = ['image/jpeg', 'image/jpg', 'image/png']; //формат фото
         if (validExtensions.includes(fileType)) { //Если файл изображение
